@@ -3,10 +3,11 @@ using System.Collections.ObjectModel;
 
 public static class Globals
 {
-	public static int CurrentFloor = 0;
-	public static ReadOnlyCollection<string> Floors = new List<string>()
+	public static int CurrentFloor = 1;
+
+	public static readonly ReadOnlyCollection<string> Floors = new List<string>
 	{
 		"EmptySceneDummy",
-		"SampleScene"
+		"Restaurant"
 	}.AsReadOnly();
 }
