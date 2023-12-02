@@ -9,6 +9,24 @@ EditorBuildSettings:
     path: Assets/Scenes/EmptySceneDummy.unity
     guid: edf561eada4ecee4da0030b67c24477f
   - enabled: 1
+    path: Assets/Scenes/Hallway.unity
+    guid: 58bcb653e69c376478a84916bf7df9b3
+  - enabled: 1
     path: Assets/Scenes/Restaurant.unity
     guid: 04b43106c84d41644963a85e7713771c
+  - enabled: 1
+    path: Assets/Scenes/Climate-room.unity
+    guid: b7d0c1a8035878742a42e0f088c7fe49
+  - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: 14e1c9e5498082f4c96f899f723c9c21
+  - enabled: 1
+    path: Assets/Scenes/Student-room.unity
+    guid: cffcea4d0bc4e124cb6d74456a03e6b6
+  - enabled: 1
+    path: Assets/Scenes/GuestRoomOne.unity
+    guid: 119df811d8d1cff44a3cebb9d940c152
+  - enabled: 1
+    path: Assets/Scenes/Kids_room.unity
+    guid: d4dfc9c3b34d2424a881f845e117a5a4
   m_configObjects: {}
