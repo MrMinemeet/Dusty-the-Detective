@@ -7,7 +7,8 @@ public static class Globals
 
 	public static readonly ReadOnlyCollection<string> Floors = new List<string>
 	{
-		"EmptySceneDummy",
+		"Lobby",
+		"Hallway",
 		"Restaurant"
 	}.AsReadOnly();
 }
