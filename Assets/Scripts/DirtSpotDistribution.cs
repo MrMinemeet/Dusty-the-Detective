@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class DirtSpotDistributor : MonoBehaviour
 {
-	[SerializeField]
+	[SerializeField] 
 	public Tilemap tileMap;
 	private String _currentFloor;
 
@@ -29,17 +29,17 @@ public class DirtSpotDistributor : MonoBehaviour
 		if (Globals.TrashSpriteMap.TryGetValue(_currentFloor, out var value))
 		{
 			Debug.Log("Placing Dirt Spots...");
-			
+			GameObject dirtSpotResource = Resources.Load<GameObject>("Prefabs/Dirtspots/DirtSpot");
+
 			// Place dirt spots
 			for (int i = 0; i < Globals.MAX_TRASH_PER_FLOOR; ++i)
 			{
-				GameObject dirtSpot = new GameObject("DirtSpot" + i);
-				dirtSpot.transform.SetParent(this.transform);
+				// Create gameeobject from prefab
+				GameObject dirtSpot = Instantiate(dirtSpotResource, transform);
+				dirtSpot.name = "DirtSpot" + i;
 				dirtSpot.transform.localScale = new Vector3(0.5f, 0.5f, 1);
-				
-				SpriteRenderer sr = dirtSpot.AddComponent<SpriteRenderer>();
+				SpriteRenderer sr = dirtSpot.GetComponent<SpriteRenderer>();
 				sr.sprite = value[i];
-				sr.sortingOrder = 1; // To be on top of the floor
 
 				// If the dirt spot is null, place it in a random position
 				if (Globals.TrashPositionMap[_currentFloor][i] == null)
