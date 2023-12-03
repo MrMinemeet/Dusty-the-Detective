@@ -160,6 +160,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.5
+  savePosition: 0
+  gameManagerName: 
 --- !u!58 &535122579891441006
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -192,9 +194,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.6787541}
   serializedVersion: 2
-  m_Radius: 0.29597574
+  m_Radius: 0.39112812
 --- !u!114 &1852676718898397534
 MonoBehaviour:
   m_ObjectHideFlags: 0
