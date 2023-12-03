@@ -916,7 +916,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3322991, y: 9.373961, z: -10}
+  m_LocalPosition: {x: -1.3322998, y: 9.373975, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -956,6 +956,67 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1001 &586905293
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1522777955173766460, guid: 5d4d4802013ca0245b78d6207315fb75, type: 3}
+      propertyPath: m_Name
+      value: DirtSpotDistributor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122156022753751071, guid: 5d4d4802013ca0245b78d6207315fb75, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122156022753751071, guid: 5d4d4802013ca0245b78d6207315fb75, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122156022753751071, guid: 5d4d4802013ca0245b78d6207315fb75, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122156022753751071, guid: 5d4d4802013ca0245b78d6207315fb75, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122156022753751071, guid: 5d4d4802013ca0245b78d6207315fb75, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122156022753751071, guid: 5d4d4802013ca0245b78d6207315fb75, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122156022753751071, guid: 5d4d4802013ca0245b78d6207315fb75, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122156022753751071, guid: 5d4d4802013ca0245b78d6207315fb75, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122156022753751071, guid: 5d4d4802013ca0245b78d6207315fb75, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122156022753751071, guid: 5d4d4802013ca0245b78d6207315fb75, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3204753706308380226, guid: 5d4d4802013ca0245b78d6207315fb75, type: 3}
+      propertyPath: tileMap
+      value: 
+      objectReference: {fileID: 1861631589}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5d4d4802013ca0245b78d6207315fb75, type: 3}
 --- !u!1 &666110316
 GameObject:
   m_ObjectHideFlags: 0
@@ -5031,7 +5092,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 11
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 23
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6866,8 +6927,8 @@ Tilemap:
     m_Data: {fileID: 3022012695825177287, guid: 072404eac58b53842bc10771bc71f365, type: 3}
   - m_RefCount: 54
     m_Data: {fileID: -3334378531921726429, guid: 072404eac58b53842bc10771bc71f365, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -9114154803073594525, guid: 072404eac58b53842bc10771bc71f365, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -5750396277104491325, guid: 072404eac58b53842bc10771bc71f365, type: 3}
   - m_RefCount: 4
@@ -6890,8 +6951,8 @@ Tilemap:
     m_Data: {fileID: -1928725437475120979, guid: 072404eac58b53842bc10771bc71f365, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -5213744503887826340, guid: 072404eac58b53842bc10771bc71f365, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -9114154803073594525, guid: 072404eac58b53842bc10771bc71f365, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 8384756070348704999, guid: 072404eac58b53842bc10771bc71f365, type: 3}
   - m_RefCount: 59
@@ -7365,3 +7426,4 @@ SceneRoots:
   - {fileID: 1632892020}
   - {fileID: 1813223418}
   - {fileID: 666110319}
+  - {fileID: 586905293}
