@@ -31,7 +31,7 @@ public static class Globals
 		Debug.Log("Initializing Trash List...");
 
 		// Load all dirt spot sprites (using a "Object[]", as casting to "Sprite[]" causes it to be null, casting individual elements works though)
-		Object[] sprites = Resources.LoadAll("DirtSpots", typeof(Sprite));
+		Sprite[] sprites = Resources.LoadAll<Sprite>("DirtSpots/dirt_spots");
 		if (sprites == null)
 		{
 			Debug.LogError("Could not load dirt spot sprites");
@@ -44,7 +44,7 @@ public static class Globals
 			List<Transform> trashPositionList = new List<Transform>();
 			for (int i = 0; i < MAX_TRASH_PER_FLOOR; i++)
 			{
-				trashSpriteList.Add((Sprite)sprites[UnityEngine.Random.Range(0, sprites.Length)]);
+				trashSpriteList.Add(sprites[UnityEngine.Random.Range(0, sprites.Length)]);
 				trashPositionList.Add(null);
 			}
 			TrashSpriteMap.Add(floor, trashSpriteList);
