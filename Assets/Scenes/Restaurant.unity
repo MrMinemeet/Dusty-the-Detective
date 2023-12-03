@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b3c8dce1167c8643920bfa4484d268a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPosition: {x: 0, y: 0, z: 0}
+  playerPosition: {x: -1.47, y: 10.16, z: 0}
 --- !u!4 &478944233
 Transform:
   m_ObjectHideFlags: 0
@@ -3830,6 +3830,10 @@ PrefabInstance:
     - target: {fileID: 1151957455358400390, guid: d46a49c869acf774ba28e0ae3a29b61f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771751454681319496, guid: d46a49c869acf774ba28e0ae3a29b61f, type: 3}
+      propertyPath: moveSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1771751454681319496, guid: d46a49c869acf774ba28e0ae3a29b61f, type: 3}
       propertyPath: savePosition
