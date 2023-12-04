@@ -64,21 +64,20 @@ public class CharacterSpriteSelector : MonoBehaviour
         idleWalkTransition.AddCondition(AnimatorConditionMode.If, 0f, "IsWalking");
         walkIdleTransition.AddCondition(AnimatorConditionMode.IfNot, 0f, "IsWalking");
         
-        
+        idleTree.AddChild(createAnimation(new Sprite[]{ sprites[1] }), new Vector2(0f, -1f));
         idleTree.AddChild(createAnimation(new Sprite[]{ sprites[10] }), new Vector2(0f, 1f));
         idleTree.AddChild(createAnimation(new Sprite[]{ sprites[7] }), new Vector2(0.5f, 0f));
-        idleTree.AddChild(createAnimation(new Sprite[]{ sprites[1] }), new Vector2(0f, -1f)); 
         idleTree.AddChild(createAnimation(new Sprite[]{ sprites[4] }), new Vector2(-0.5f, 0f));
         walkTree.AddChild(createAnimation(new Sprite[]{ sprites[9], sprites[10], sprites[11] }), new Vector2(0f, 1f));
         walkTree.AddChild(createAnimation(new Sprite[]{ sprites[6], sprites[7],  sprites[8] }), new Vector2(0.5f, 0f));
         walkTree.AddChild(createAnimation(new Sprite[]{ sprites[0], sprites[1],  sprites[2] }), new Vector2(0f, -1f)); 
         walkTree.AddChild(createAnimation(new Sprite[]{ sprites[3], sprites[4],  sprites[5] }), new Vector2(-0.5f, 0f));
+
     }
     
     void Update()
     {
-        Vector2 movement_vector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")); // = _rigidBody.velocity
-        _rigidBody.velocity = movement_vector; // remove later
+        Vector2 movement_vector = _rigidBody.velocity;
         if (movement_vector.x != 0 || movement_vector.y != 0)
         {
             _animator.SetFloat("X", movement_vector.x);
