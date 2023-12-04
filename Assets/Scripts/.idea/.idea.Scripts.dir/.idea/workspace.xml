@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9f092dbc-67f5-4fd7-bde1-fa289618d185" name="Changes" comment="move screens into own folder in scenes">
+      <change beforePath="$PROJECT_DIR$/../Resources/Prefabs/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../Resources/Prefabs/Character.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Resources/Scripts/CharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Resources/Scripts/CharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/Lobby.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes/Lobby/NavMesh-InteriorWithCollision.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes/Lobby/NavMesh-InteriorWithCollision.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../.." value="stuff" />
+      </map>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/Rechenwerk/RiderProjects/game-dev/Assets/Animations/MrProper/MrProperAnimator.controller" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Resources/Scripts/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Resources/Scripts/FloorChanger.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Rechenwerk/RiderProjects/game-dev/Assets/Scenes/EmptySceneDummy.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Rechenwerk/RiderProjects/game-dev/Assets/Scenes/Lobby.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Rechenwerk/RiderProjects/game-dev/ProjectSettings/NavMeshAreas.asset" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="move screens into own folder in scenes">
+      <option name="closed" value="true" />
+      <created>1701722533953</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701722533953</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="move screens into own folder in scenes" />
+    <option name="LAST_COMMIT_MESSAGE" value="move screens into own folder in scenes" />
+  </component>
+</project>
