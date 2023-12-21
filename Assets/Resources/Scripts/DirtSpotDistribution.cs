@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,10 +7,6 @@ using Random = UnityEngine.Random;
 
 public class DirtSpotDistributor : MonoBehaviour
 {
-	[SerializeField] public Tilemap tileMap;
-	private TilemapCollider2D _tilemapCollider2D;
-	private String _currentFloor;
-
 	// Holds tiles, that are not a full tile and also don't have a full tile collider. These tiles are not allowed to have dirt spots on them.
 	// Not very beautiful, but from what I saw, there is no proper way to check if the part of the tile has "drawing" on it
 	private static readonly string[] TilesToNotPlaceOn =
@@ -48,14 +44,31 @@ public class DirtSpotDistributor : MonoBehaviour
 		"MainTileMapUnity_586", "MainTileMapUnity_587"
 	};
 
+	[SerializeField] public GameObject grid;
+	private string _currentFloor;
+	private readonly List<TilemapCollider2D> _tilemapCollider2Ds = new();
+	private readonly List<Tilemap> _tilemaps = new();
+
 	private void Awake()
 	{
-		if (tileMap == null)
-		{
-			tileMap = GameObject.Find("Floor").GetComponent<Tilemap>();
-		}
+		if (grid == null) grid = GameObject.Find("Grid");
 
-		_tilemapCollider2D = tileMap.GetComponent<TilemapCollider2D>();
+		// Get children of grid
+		List<GameObject> children = grid.GetComponentsInChildren<Transform>().Select(t => t.gameObject).ToList();
+
+		foreach (GameObject obj in children)
+		{
+			Tilemap tileMap = obj.GetComponent<Tilemap>();
+			if (tileMap != null)
+			{
+				TilemapCollider2D tc2d = tileMap.GetComponent<TilemapCollider2D>();
+				if (tc2d != null)
+				{
+					_tilemaps.Add(tileMap);
+					_tilemapCollider2Ds.Add(tc2d);
+				}
+			}
+		}
 	}
 
 	// Start is called before the first frame update
@@ -66,7 +79,7 @@ public class DirtSpotDistributor : MonoBehaviour
 
 		#region DirtPlacement
 
-		if (Globals.TrashSpriteMap.TryGetValue(_currentFloor, out var value))
+		if (Globals.TrashSpriteMap.TryGetValue(_currentFloor, out List<Sprite> value))
 		{
 			Debug.Log("Placing Dirt Spots...");
 			GameObject dirtSpotResource = Resources.Load<GameObject>("Prefabs/Dirtspots/DirtSpot");
@@ -84,31 +97,48 @@ public class DirtSpotDistributor : MonoBehaviour
 				// If the dirt spot is null, place it in a random position
 				if (Globals.TrashPositionMap[_currentFloor][i].Equals(Vector3.negativeInfinity))
 				{
-					Bounds b = tileMap.localBounds;
+					Bounds b = _tilemaps[0].localBounds;
 					b.extents = new Vector3(b.extents.x - 1.5f, b.extents.y - 1.5f, b.extents.z);
 
 					TileBase tileAtPosition;
-					Vector3 position;
+					Bounds dirtSpotBounds;
+					Tile.ColliderType tileColliderType = Tile.ColliderType.None;
 					// Find a position that is a tile and not
 					do
 					{
 						// Draw a random position within the bounds and only if a it doesn't collide with a wall
-						position = b.center + new Vector3(
+						Vector3 position = b.center + new Vector3(
 							Random.Range(-b.extents.x, b.extents.x),
 							Random.Range(-b.extents.y, b.extents.y));
 
 						// Get tile under position
-						tileAtPosition = tileMap.GetTile(tileMap.WorldToCell(position));
+						tileAtPosition = _tilemaps[0].GetTile(_tilemaps[0].WorldToCell(position));
+
+						// Set position to the calculated position
+						dirtSpot.transform.position = position;
+						
+						// Get bounds of dirt spot
+						dirtSpotBounds = dirtSpot.GetComponent<BoxCollider2D>().bounds;
+
+						if (tileAtPosition != null)
+						{
+							TileData td = new TileData();
+							tileAtPosition.GetTileData(
+								new Vector3Int((int)position.x, (int)position.y, (int)position.x), _tilemaps[0],
+								ref td);
+							tileColliderType = td.colliderType;
+						}
 					} while (
 						// Don't place dirt if there is no tile
 						tileAtPosition == null ||
+						// If current tile collider type is NONE (there is no collider) for that tile
+						tileColliderType == Tile.ColliderType.None ||
 						// The tile is on the "ignore" list
 						TilesToNotPlaceOn.Contains(tileAtPosition.name) ||
 						// The tile has a collider which the position overlaps with
-						_tilemapCollider2D.OverlapPoint(new Vector2(position.x, position.y))
+						_tilemapCollider2Ds.Any(c => c.bounds.Intersects(dirtSpotBounds))
 					);
 
-					dirtSpot.transform.position = position;
 					// Store position
 					Globals.TrashPositionMap[_currentFloor][i] = dirtSpot.transform.position;
 				}
