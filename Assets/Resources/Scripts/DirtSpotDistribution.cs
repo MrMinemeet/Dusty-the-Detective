@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,11 +7,6 @@ using Random = UnityEngine.Random;
 
 public class DirtSpotDistributor : MonoBehaviour
 {
-	[SerializeField] public GameObject grid;
-	private List<Tilemap> _tilemaps = new();
-	private List<TilemapCollider2D> _tilemapCollider2Ds = new();
-	private String _currentFloor;
-
 	// Holds tiles, that are not a full tile and also don't have a full tile collider. These tiles are not allowed to have dirt spots on them.
 	// Not very beautiful, but from what I saw, there is no proper way to check if the part of the tile has "drawing" on it
 	private static readonly string[] TilesToNotPlaceOn =
@@ -50,12 +44,14 @@ public class DirtSpotDistributor : MonoBehaviour
 		"MainTileMapUnity_586", "MainTileMapUnity_587"
 	};
 
+	[SerializeField] public GameObject grid;
+	private string _currentFloor;
+	private readonly List<TilemapCollider2D> _tilemapCollider2Ds = new();
+	private readonly List<Tilemap> _tilemaps = new();
+
 	private void Awake()
 	{
-		if (grid == null)
-		{
-			grid = GameObject.Find("Grid");
-		}
+		if (grid == null) grid = GameObject.Find("Grid");
 
 		// Get children of grid
 		List<GameObject> children = grid.GetComponentsInChildren<Transform>().Select(t => t.gameObject).ToList();
@@ -65,11 +61,11 @@ public class DirtSpotDistributor : MonoBehaviour
 			Tilemap tileMap = obj.GetComponent<Tilemap>();
 			if (tileMap != null)
 			{
-				var collider = tileMap.GetComponent<TilemapCollider2D>();
-				if (collider != null)
+				TilemapCollider2D tc2d = tileMap.GetComponent<TilemapCollider2D>();
+				if (tc2d != null)
 				{
 					_tilemaps.Add(tileMap);
-					_tilemapCollider2Ds.Add(collider);
+					_tilemapCollider2Ds.Add(tc2d);
 				}
 			}
 		}
@@ -83,7 +79,7 @@ public class DirtSpotDistributor : MonoBehaviour
 
 		#region DirtPlacement
 
-		if (Globals.TrashSpriteMap.TryGetValue(_currentFloor, out var value))
+		if (Globals.TrashSpriteMap.TryGetValue(_currentFloor, out List<Sprite> value))
 		{
 			Debug.Log("Placing Dirt Spots...");
 			GameObject dirtSpotResource = Resources.Load<GameObject>("Prefabs/Dirtspots/DirtSpot");
