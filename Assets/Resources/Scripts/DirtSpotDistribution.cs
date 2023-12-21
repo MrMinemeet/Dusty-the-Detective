@@ -101,27 +101,44 @@ public class DirtSpotDistributor : MonoBehaviour
 					b.extents = new Vector3(b.extents.x - 1.5f, b.extents.y - 1.5f, b.extents.z);
 
 					TileBase tileAtPosition;
-					Vector3 position;
+					Bounds dirtSpotBounds;
+					Tile.ColliderType tileColliderType = Tile.ColliderType.None;
 					// Find a position that is a tile and not
 					do
 					{
 						// Draw a random position within the bounds and only if a it doesn't collide with a wall
-						position = b.center + new Vector3(
+						Vector3 position = b.center + new Vector3(
 							Random.Range(-b.extents.x, b.extents.x),
 							Random.Range(-b.extents.y, b.extents.y));
 
 						// Get tile under position
 						tileAtPosition = _tilemaps[0].GetTile(_tilemaps[0].WorldToCell(position));
+
+						// Set position to the calculated position
+						dirtSpot.transform.position = position;
+						
+						// Get bounds of dirt spot
+						dirtSpotBounds = dirtSpot.GetComponent<BoxCollider2D>().bounds;
+
+						if (tileAtPosition != null)
+						{
+							TileData td = new TileData();
+							tileAtPosition.GetTileData(
+								new Vector3Int((int)position.x, (int)position.y, (int)position.x), _tilemaps[0],
+								ref td);
+							tileColliderType = td.colliderType;
+						}
 					} while (
 						// Don't place dirt if there is no tile
 						tileAtPosition == null ||
+						// If current tile collider type is NONE (there is no collider) for that tile
+						tileColliderType == Tile.ColliderType.None ||
 						// The tile is on the "ignore" list
 						TilesToNotPlaceOn.Contains(tileAtPosition.name) ||
 						// The tile has a collider which the position overlaps with
-						_tilemapCollider2Ds.Any(c => c.OverlapPoint(new Vector2(position.x, position.y)))
+						_tilemapCollider2Ds.Any(c => c.bounds.Intersects(dirtSpotBounds))
 					);
 
-					dirtSpot.transform.position = position;
 					// Store position
 					Globals.TrashPositionMap[_currentFloor][i] = dirtSpot.transform.position;
 				}
