@@ -9,8 +9,8 @@ using Random = UnityEngine.Random;
 public class DirtSpotDistributor : MonoBehaviour
 {
 	[SerializeField] public GameObject grid;
-	private List<Tilemap> _tilemaps;
-	private List<TilemapCollider2D> _tilemapCollider2Ds;
+	private List<Tilemap> _tilemaps = new();
+	private List<TilemapCollider2D> _tilemapCollider2Ds = new();
 	private String _currentFloor;
 
 	// Holds tiles, that are not a full tile and also don't have a full tile collider. These tiles are not allowed to have dirt spots on them.
@@ -59,12 +59,19 @@ public class DirtSpotDistributor : MonoBehaviour
 
 		// Get children of grid
 		List<GameObject> children = grid.GetComponentsInChildren<Transform>().Select(t => t.gameObject).ToList();
-		
-		foreach(GameObject obj in children)
+
+		foreach (GameObject obj in children)
 		{
 			Tilemap tileMap = obj.GetComponent<Tilemap>();
-			_tilemaps.Add(tileMap);
-			_tilemapCollider2Ds.Add(tileMap.GetComponent<TilemapCollider2D>());
+			if (tileMap != null)
+			{
+				var collider = tileMap.GetComponent<TilemapCollider2D>();
+				if (collider != null)
+				{
+					_tilemaps.Add(tileMap);
+					_tilemapCollider2Ds.Add(collider);
+				}
+			}
 		}
 	}
 
