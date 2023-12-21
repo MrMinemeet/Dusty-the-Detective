@@ -80,8 +80,9 @@ public class DirtSpotDistributor : MonoBehaviour
 				dirtSpot.transform.localScale = new Vector3(0.5f, 0.5f, 1);
 				dirtSpot.GetComponent<SpriteRenderer>().sprite = value[i];
 
+
 				// If the dirt spot is null, place it in a random position
-				if (Globals.TrashPositionMap[_currentFloor][i] == null)
+				if (Globals.TrashPositionMap[_currentFloor][i].Equals(Vector3.negativeInfinity))
 				{
 					Bounds b = tileMap.localBounds;
 					b.extents = new Vector3(b.extents.x - 1.5f, b.extents.y - 1.5f, b.extents.z);
@@ -108,10 +109,12 @@ public class DirtSpotDistributor : MonoBehaviour
 					);
 
 					dirtSpot.transform.position = position;
+					// Store position
+					Globals.TrashPositionMap[_currentFloor][i] = dirtSpot.transform.position;
 				}
 				else
 				{
-					dirtSpot.transform.position = Globals.TrashPositionMap[_currentFloor][i].position;
+					dirtSpot.transform.position = Globals.TrashPositionMap[_currentFloor][i];
 				}
 			}
 		}
