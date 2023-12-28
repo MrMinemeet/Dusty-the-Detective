@@ -51,6 +51,7 @@ public class DirtSpotDistributor : MonoBehaviour
 
 	private void Awake()
 	{
+		#region GetTilemaps
 		if (grid == null) grid = GameObject.Find("Grid");
 
 		// Get children of grid
@@ -69,13 +70,9 @@ public class DirtSpotDistributor : MonoBehaviour
 				}
 			}
 		}
-	}
-
-	// Start is called before the first frame update
-	private void Start()
-	{
 		_currentFloor = SceneManager.GetActiveScene().name;
 		Debug.Log("Current Floor: " + _currentFloor);
+		#endregion
 
 		#region DirtPlacement
 
