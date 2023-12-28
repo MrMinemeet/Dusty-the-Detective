@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using UnityEngine;
-using Object = System.Object;
+using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public static class Globals
 {
 	public const int MAX_TRASH_PER_FLOOR = 2;
-
-	public static int CurrentFloor = 1;
+	public static int CurrentFloor => Floors.IndexOf(SceneManager.GetActiveScene().name);
 
 	public static readonly ReadOnlyCollection<string> Floors = new List<string>
 	{
@@ -44,7 +44,7 @@ public static class Globals
 			List<Vector3> trashPositionList = new List<Vector3>();
 			for (int i = 0; i < MAX_TRASH_PER_FLOOR; i++)
 			{
-				trashSpriteList.Add(sprites[UnityEngine.Random.Range(0, sprites.Length)]);
+				trashSpriteList.Add(sprites[Random.Range(0, sprites.Length)]);
 				trashPositionList.Add(Vector3.negativeInfinity); // Vector3 can't be null, so use negative infinity instead
 			}
 			TrashSpriteMap.Add(floor, trashSpriteList);

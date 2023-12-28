@@ -32,12 +32,6 @@ public class FloorChanger : MonoBehaviour
 		{
 			if ((Globals.CurrentFloor == Globals.Floors.Count - 1 && goesUp) ||
 			    (Globals.CurrentFloor == 0 && !goesUp))
-				return;
-
-			if (goesUp)
-				Globals.CurrentFloor++;
-			else
-				Globals.CurrentFloor--;
 
 			SceneManager.LoadScene(Globals.Floors[Globals.CurrentFloor]);
 		}
