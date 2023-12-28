@@ -1,3 +1,8 @@
+/*
+ * Script based on tutorial by "Brackeys" on YouTube.
+ * https://youtu.be/CE9VOZivb3I
+ */
+
 using System;
 using System.Collections;
 using UnityEngine;
