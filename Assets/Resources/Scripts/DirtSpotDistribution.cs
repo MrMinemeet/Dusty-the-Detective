@@ -138,6 +138,9 @@ public class DirtSpotDistributor : MonoBehaviour
 
 					// Store position
 					Globals.TrashPositionMap[_currentFloor][i] = dirtSpot.transform.position;
+
+					// Rename
+					dirtSpot.name = "DirtSpot_" + dirtSpot.transform.position;
 				}
 				else
 				{

@@ -26,7 +26,19 @@ public class DirtspotPointer : MonoBehaviour
         foreach(Vector3 targetPos in Globals.TrashPositionMap[SceneManager.GetActiveScene().name]){
             GameObject pointer = Instantiate(Resources.Load<GameObject>("Prefabs/UI/Pointer"), transform);
             pointer.name = "Pointer_" + targetPos;
+
+            // Add pointer to list
             _pointerList.Add(new Pointer(targetPos, pointer));
+
+            // Remove pointer when dirt spot is cleaned
+            CleaningTask ct = GameObject.Find($"DirtSpot_{targetPos}").GetComponent<CleaningTask>();
+            ct.OnCleaned.AddListener(() =>
+            {
+                // Remove pointer from list
+                _pointerList.Remove(_pointerList.Find(p => p.TargetPosition == targetPos));
+                // Destroy pointer game object
+                Destroy(pointer);
+            });
         }
     }
 
@@ -60,7 +72,7 @@ public class DirtspotPointer : MonoBehaviour
     
     private class Pointer
     {
-        private Vector3 TargetPosition { get; }
+        public Vector3 TargetPosition { get; }
         private RectTransform RectTransform { get; }
         private Image Image { get; }
         
