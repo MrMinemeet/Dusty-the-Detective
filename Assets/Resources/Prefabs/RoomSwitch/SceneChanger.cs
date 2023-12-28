@@ -12,7 +12,8 @@ public class SceneChanger : MonoBehaviour
 	{
 		if (other.CompareTag("Player"))
 		{
-			SceneManager.LoadScene(nextSceneName);
+			LevelLoader ll = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
+			StartCoroutine(ll.LoadLevel(nextSceneName));
 		}
 	}
 	

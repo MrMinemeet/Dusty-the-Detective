@@ -32,8 +32,10 @@ public class FloorChanger : MonoBehaviour
 		{
 			if ((Globals.CurrentFloor == Globals.Floors.Count - 1 && goesUp) ||
 			    (Globals.CurrentFloor == 0 && !goesUp))
-
-			SceneManager.LoadScene(Globals.Floors[Globals.CurrentFloor]);
+			{
+				LevelLoader ll = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
+				StartCoroutine(ll.LoadLevel(Globals.Floors[Globals.CurrentFloor]));
+			}
 		}
 	}
 }
