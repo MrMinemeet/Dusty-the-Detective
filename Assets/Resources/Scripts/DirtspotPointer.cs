@@ -44,6 +44,16 @@ public class DirtspotPointer : MonoBehaviour
 
     private void Update()
     {
+        // Hide pointer when game is paused
+        if (PauseMenu.IsGamePaused)
+        {
+            foreach (Pointer p in _pointerList)
+            {
+                p.Image.enabled = false;
+            }
+            return;
+        }
+        
         foreach (Pointer p in _pointerList)
         {
             p.UpdatePos(_uiCamera);
@@ -74,7 +84,7 @@ public class DirtspotPointer : MonoBehaviour
     {
         public Vector3 TargetPosition { get; }
         private RectTransform RectTransform { get; }
-        private Image Image { get; }
+        public Image Image { get; }
         
         public Pointer(Vector3 targetPosition, GameObject gameObject)
         {
