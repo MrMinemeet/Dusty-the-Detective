@@ -48,6 +48,12 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         IsGamePaused = false;
         
+        // Hide pause menu children otherwise transition looks weird
+        foreach (Transform child in _pauseMenuUI.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+        
         // Load main menu
         StartCoroutine(FindObjectOfType<LevelLoader>().LoadLevel("MainScreen"));
     }
