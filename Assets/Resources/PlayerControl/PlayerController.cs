@@ -42,6 +42,9 @@ public class PlayerController : MonoBehaviour
     }
     void OnMove(InputValue value)
     {
+        // Don't do anything if game is paused
+        if (PauseMenu.IsGamePaused) return;
+        
         _moveInput = value.Get<Vector2>();
         if (_moveInput.x != 0 || _moveInput.y != 0)
         {

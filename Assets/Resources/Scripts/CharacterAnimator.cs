@@ -15,6 +15,9 @@ public class CharacterAnimator : MonoBehaviour
     
     void Update()
     {
+        // Don't do anything if game is paused
+        if (PauseMenu.IsGamePaused) return;
+        
         Vector2 movement_vector = _rigidBody.velocity;
         if (movement_vector.x != 0 || movement_vector.y != 0)
         {
