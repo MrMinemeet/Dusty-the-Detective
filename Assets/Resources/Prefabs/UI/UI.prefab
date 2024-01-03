@@ -590,7 +590,7 @@ GameObject:
   - component: {fileID: 2099409314173508496}
   - component: {fileID: 420787418857355188}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: DirtSpotPointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
