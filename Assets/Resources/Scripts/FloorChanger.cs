@@ -28,6 +28,9 @@ public class FloorChanger : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
+		// Don't allow changing floors if game is paused
+		if (PauseMenu.IsGamePaused) return;
+		
 		if (other.CompareTag("Player"))
 		{
 			if ((Globals.CurrentFloor == Globals.Floors.Count - 1 && goesUp) ||
