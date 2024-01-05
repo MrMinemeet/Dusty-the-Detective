@@ -32,7 +32,7 @@ public class DirtspotPointer : MonoBehaviour
 
             // Remove pointer when dirt spot is cleaned
             CleaningTask ct = GameObject.Find($"DirtSpot_{targetPos}").GetComponent<CleaningTask>();
-            ct.OnCleaned.AddListener(() =>
+            ct.onCleaned.AddListener(() =>
             {
                 // Remove pointer from list
                 _pointerList.Remove(_pointerList.Find(p => p.TargetPosition == targetPos));
