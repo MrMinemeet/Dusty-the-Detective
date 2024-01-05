@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class CharacterAnimator : MonoBehaviour
@@ -18,11 +15,11 @@ public class CharacterAnimator : MonoBehaviour
         // Don't do anything if game is paused
         if (PauseMenu.IsGamePaused) return;
         
-        Vector2 movement_vector = _rigidBody.velocity;
-        if (movement_vector.x != 0 || movement_vector.y != 0)
+        Vector2 movementVector = _rigidBody.velocity;
+        if (movementVector.x != 0 || movementVector.y != 0)
         {
-            _animator.SetFloat("X", movement_vector.x);
-            _animator.SetFloat("Y", movement_vector.y);
+            _animator.SetFloat("X", movementVector.x);
+            _animator.SetFloat("Y", movementVector.y);
             
             _animator.SetBool("IsWalking", true);            
         }

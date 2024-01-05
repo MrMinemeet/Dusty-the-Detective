@@ -40,8 +40,8 @@ public static class Globals
 
 		foreach (var floor in Floors)
 		{
-			List<Sprite> trashSpriteList = new List<Sprite>();
-			List<Vector3> trashPositionList = new List<Vector3>();
+			List<Sprite> trashSpriteList = new();
+			List<Vector3> trashPositionList = new();
 			for (int i = 0; i < MAX_TRASH_PER_FLOOR; i++)
 			{
 				trashSpriteList.Add(sprites[Random.Range(0, sprites.Length)]);

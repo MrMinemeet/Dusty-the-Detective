@@ -3,7 +3,7 @@ using UnityEngine;
 public class CleaningTask : MonoBehaviour
 {
 	private bool _canClean;
-	public UnityEngine.Events.UnityEvent OnCleaned;
+	public UnityEngine.Events.UnityEvent onCleaned;
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
@@ -29,7 +29,7 @@ public class CleaningTask : MonoBehaviour
 		if (_canClean && Input.GetKeyDown(KeyCode.E))
 		{
 			Debug.Log("Player cleaned spot '" + gameObject.name + "'");
-			OnCleaned.Invoke();
+			onCleaned.Invoke();
 			Destroy(gameObject);
 		}
 	}
