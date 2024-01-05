@@ -1,20 +1,22 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 3f;
-    public Boolean savePosition = false;
+    public bool savePosition;
     public string gameManagerName;
 
     private Vector2 _moveInput = Vector2.zero;
     private Rigidbody2D _rb;
     private Animator _a;
     private GameManager _gameManager;
-    
+
+    // Indicates if the player released the input at leased once since coming to the scene
+    private bool _released;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _a = GetComponent<Animator>();
@@ -33,20 +35,30 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        _rb.velocity = _moveInput * moveSpeed;
-        if (savePosition)
+        // Check if player is not moving, in order to mark input as released at least once
+        if (!_released && _moveInput is { x: 0, y: 0 })
         {
-            _gameManager.playerPosition = transform.position; 
+            _released = true;
+            return;
         }
+
+        // Only move if the player had released the input at least once
+        if (_released)
+            _rb.velocity = _moveInput * moveSpeed;
         
+        if (savePosition)
+            _gameManager.playerPosition = transform.position; 
     }
-    void OnMove(InputValue value)
+
+    private void OnMove(InputValue value)
     {
         // Don't do anything if game is paused
         if (PauseMenu.IsGamePaused) return;
         
         _moveInput = value.Get<Vector2>();
-        if (_moveInput.x != 0 || _moveInput.y != 0)
+
+        // Only move if the player had released the input at least once and the input is not 0
+        if (_released && (_moveInput.x != 0 || _moveInput.y != 0))
         {
             _a.SetFloat("X", _moveInput.x);
             _a.SetFloat("Y", _moveInput.y);
