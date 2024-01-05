@@ -42,6 +42,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 92927979
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Broom
+    uniqueID: 2096521253
     locked: 0
