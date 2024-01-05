@@ -31,17 +31,19 @@ public class LevelLoader : MonoBehaviour
 			// Disable player movement
 			pi = player.GetComponent<PlayerInput>();
 		}
-		catch (Exception e)
+		catch (Exception)
 		{
-			Debug.Log(e);
+			// ignored
 		}
-		
-		pi!.enabled = false;
-		_transition.SetTrigger("Start");
 
+		if (pi != null) 
+			pi.enabled = false;
+		
+		_transition.SetTrigger("Start");
 		yield return new WaitForSeconds(TRANSITION_TIME);
 		
-		pi!.enabled = true;
+		if (pi != null)
+			pi!.enabled = true;
 		SceneManager.LoadScene(levelName);
 	}
 }
