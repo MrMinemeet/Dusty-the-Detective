@@ -1,3 +1,4 @@
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -10,9 +11,11 @@ public class DisplayGuestAmount : MonoBehaviour
 		_guestAmountValueText = GetComponent<TextMeshProUGUI>();
 	}
 
-	// Update is called once per frame
-	private void Update()
+	private void LateUpdate()
 	{
-		_guestAmountValueText.text = Globals.ActiveGuests.Count.ToString();
+		// Set text to amounts of guests that are still active
+		_guestAmountValueText.text = Globals.ActiveGuestMap
+			.Count(guest => guest.Value)
+			.ToString();
 	}
 }
