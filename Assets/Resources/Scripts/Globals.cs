@@ -33,8 +33,8 @@ public static class Globals
 		{ "Student", true },
 		{ "Teacher", true }
 	};
-	
-	public const int MAX_TRASH_PER_FLOOR = 2;
+
+	private const int MAX_TRASH_PER_FLOOR = 2;
 	public static int CurrentFloor => Floors.IndexOf(CurrentFloorName);
 	public static string CurrentFloorName => SceneManager.GetActiveScene().name;
 
