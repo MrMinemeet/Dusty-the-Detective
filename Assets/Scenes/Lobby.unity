@@ -312,6 +312,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1892379644}
+    - target: {fileID: 1568489971733857162, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: typingSpeed
+      value: 0.001
+      objectReference: {fileID: 0}
     - target: {fileID: 5397561308642434191, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8441516
@@ -3438,12 +3442,55 @@ MonoBehaviour:
     dialogueLines:
     - character:
         name: Manager
-        icon: {fileID: -1077743705, guid: 98a967a3319f5464cb19d80ff5a2e48d, type: 3}
-      line: hi
+        icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
+      line: "Hey Dusty! I am sorry for calling you again, but as it looks like we
+        are again facing with guest who are felling like they \r\ncould do what they
+        want."
     - character:
         name: Player
         icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
-      line: hello
+      line: Ok, I understand. What kind of guests are it this time?
+    - character:
+        name: Manager
+        icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
+      line: Two days ago five new guests have checked in, it seems like some of them
+        are responsible for the dirt.
+    - character:
+        name: Manager
+        icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
+      line: The first looks like a climate activist, I mean he even doesn't have
+        any clothes on, beside a small leave which is covering his *****.
+    - character:
+        name: Manager
+        icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
+      line: The second and thrid one checked in together. A father with his small
+        son. I think that the father is a math teacher.
+    - character:
+        name: Player
+        icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
+      line: If he is a math teacher, then we are no friends, i hate math.
+    - character:
+        name: Manager
+        icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
+      line: Regarding the last two, i cannot say much about them, they appear like
+        normal people. Maybe you can talk with them, to get more information.
+    - character:
+        name: Player
+        icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
+      line: Thanks for the briefing, I will try my best to find out who is guilty.
+    - character:
+        name: Manager
+        icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
+      line: Oh, before i forget it, I think that our cleaning woman Julia can also
+        give you some information.
+    - character:
+        name: Player
+        icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
+      line: I will try my best to finish the job. See you later.
+    - character:
+        name: Manager
+        icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
+      line: See ya.
 --- !u!61 &626894724
 BoxCollider2D:
   m_ObjectHideFlags: 0
