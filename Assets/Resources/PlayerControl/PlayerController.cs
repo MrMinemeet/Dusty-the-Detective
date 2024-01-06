@@ -41,6 +41,14 @@ public class PlayerController : MonoBehaviour
             _released = true;
             return;
         }
+        
+        // Skip if dialogue is active
+        if (DialogueManager.IsDialogueActive)
+        {
+            _moveInput = Vector2.zero;
+            _rb.velocity = Vector2.zero;
+            return;
+        }
 
         // Only move if the player had released the input at least once
         if (_released)
@@ -54,6 +62,13 @@ public class PlayerController : MonoBehaviour
     {
         // Don't do anything if game is paused
         if (PauseMenu.IsGamePaused) return;
+
+        if (DialogueManager.IsDialogueActive)
+        {
+            // Stop animations
+            _a.SetBool("IsWalking", false);
+            return;
+        }
         
         _moveInput = value.Get<Vector2>();
 

@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
 	private Rigidbody2D _rigidBody;
 	private Waypoint _target;
 	private float _waitTime;
+	private bool _isInConversation;
 
 	private void Awake()
 	{
@@ -44,6 +45,13 @@ public class Movement : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		if (_isInConversation)
+		{
+			// Stop moving and do nothing
+			_rigidBody.velocity = Vector2.zero;
+			return;
+		}
+		
 		if (Vector2.Distance(transform.position, _target.Position) <= 0.35f)
 		{
 			// Target reached, wait
@@ -79,5 +87,10 @@ public class Movement : MonoBehaviour
 			? _path[0]
 			// Otherwise, go to next position in path
 			: _path[_path.IndexOf(_target) + 1];
+	}
+
+	private void OnTriggerStay2D(Collider2D other)
+	{
+		_isInConversation = other.CompareTag("Player") && DialogueManager.IsDialogueActive;
 	}
 }
