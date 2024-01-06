@@ -454,6 +454,88 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e26840270d370e94891467a33dbbf7f5, type: 3}
+--- !u!1 &329821758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8420794488034692323, guid: fb3df70666936ab4084ed4a91d5dda44, type: 3}
+  m_PrefabInstance: {fileID: 961212018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &329821759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329821758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb98a8cd4c318344b82ca92f245325ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: Maid
+        icon: {fileID: 2131280070, guid: 8de5803d76be11d46b17b62094469957, type: 3}
+      line: Hey dusty, nice to see you again.
+    - character:
+        name: Player
+        icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
+      line: Nice to see you to Julia. Mr Manager said that you can give me some information
+        about the new guests.
+    - character:
+        name: Maid
+        icon: {fileID: 2131280070, guid: 8de5803d76be11d46b17b62094469957, type: 3}
+      line: Yes i can, but i wont until you help me cleaning the dirt away. So come
+        back after you have found all three spots and removed them.
+    - character:
+        name: Player
+        icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
+      line: That's mean :(.
+--- !u!61 &329821760
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329821758}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.082267225}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.48453444}
+  m_EdgeRadius: 0
 --- !u!1 &391958369
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,6 +872,32 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &396695413 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8966302800921364341, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+  m_PrefabInstance: {fileID: 2096429507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &396695416
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396695413}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c1a43eef54703f04f946bdd888fa50f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &518067927
 GameObject:
   m_ObjectHideFlags: 3
@@ -986,7 +1094,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3322984, y: 9.373979, z: -10}
+  m_LocalPosition: {x: -1.3322991, y: 9.373983, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2456,7 +2564,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 415068816516171308, guid: fb3df70666936ab4084ed4a91d5dda44, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1942938402}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8420794488034692323, guid: fb3df70666936ab4084ed4a91d5dda44, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 329821760}
+    - targetCorrespondingSourceObject: {fileID: 8420794488034692323, guid: fb3df70666936ab4084ed4a91d5dda44, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 329821759}
   m_SourcePrefab: {fileID: 100100000, guid: fb3df70666936ab4084ed4a91d5dda44, type: 3}
 --- !u!1001 &1002923242
 PrefabInstance:
@@ -8505,6 +8619,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 1568489971733857162, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 396695416}
+    - target: {fileID: 5397561308642434191, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -277
+      objectReference: {fileID: 0}
     - target: {fileID: 6743852514541926416, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1000
@@ -8548,7 +8670,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8966302800921364341, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 396695416}
   m_SourcePrefab: {fileID: 100100000, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
 --- !u!1001 &2103085974
 PrefabInstance:
