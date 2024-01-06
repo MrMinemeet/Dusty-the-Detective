@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
@@ -34,7 +35,8 @@ public static class Globals
 	};
 	
 	public const int MAX_TRASH_PER_FLOOR = 2;
-	public static int CurrentFloor => Floors.IndexOf(SceneManager.GetActiveScene().name);
+	public static int CurrentFloor => Floors.IndexOf(CurrentFloorName);
+	public static string CurrentFloorName => SceneManager.GetActiveScene().name;
 
 	public static readonly ReadOnlyCollection<string> Floors = new List<string>
 	{
@@ -43,11 +45,7 @@ public static class Globals
 		"Restaurant",
 	}.AsReadOnly();
 
-	// Holds the position for each dirt spot on each the floors
-	public static readonly Dictionary<String, List<Vector3>> TrashPositionMap = new();
-
-	// Holds the sprite for each dirt spot on each the floors
-	public static readonly Dictionary<String, List<Sprite>> TrashSpriteMap = new();
+	public static readonly Dictionary<String, List<Trash>> trashMap = new();
 
 	// This method is called at the start of the program, before the first scene is loaded.
 	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -66,16 +64,30 @@ public static class Globals
 
 		foreach (var floor in Floors)
 		{
-			List<Sprite> trashSpriteList = new();
-			List<Vector3> trashPositionList = new();
+			List<Trash> trashList = new();
 			for (int i = 0; i < MAX_TRASH_PER_FLOOR; i++)
 			{
-				trashSpriteList.Add(sprites[Random.Range(0, sprites.Length)]);
-				trashPositionList.Add(Vector3.negativeInfinity); // Vector3 can't be null, so use negative infinity instead
+				trashList.Add(new Trash(Vector3.negativeInfinity, sprites[Random.Range(0, sprites.Length)]));
 			}
-			TrashSpriteMap.Add(floor, trashSpriteList);
-			TrashPositionMap.Add(floor, trashPositionList);
+			trashMap.Add(floor, trashList);
 		}
 		#endregion
+	}
+
+	/**
+	 * Provides the amount of trash left in total
+	 */
+	public static int LeftoverTrash => trashMap.Values.SelectMany(trash => trash).Count();
+}
+
+public record Trash
+{
+	public Vector3 Position;
+	public readonly Sprite Image;
+	
+	public Trash(Vector3 position, Sprite image)
+	{
+		Position = position;
+		Image = image;
 	}
 }

@@ -76,25 +76,30 @@ public class DirtSpotDistributor : MonoBehaviour
 
 		#region DirtPlacement
 
-		if (Globals.TrashSpriteMap.TryGetValue(_currentFloor, out List<Sprite> value))
+		if (Globals.trashMap.TryGetValue(_currentFloor, out var value))
 		{
 			Debug.Log("Placing Dirt Spots...");
 			GameObject dirtSpotResource = Resources.Load<GameObject>("Prefabs/Dirtspots/DirtSpot");
 
 			// Place dirt spots
-			for (int i = 0; i < Globals.MAX_TRASH_PER_FLOOR; ++i)
+			foreach (var t in Globals.trashMap[Globals.CurrentFloorName])
 			{
-				// Create gameeobject from prefab
+				// Create gameObject from prefab
 				GameObject dirtSpot = Instantiate(dirtSpotResource, transform);
-				dirtSpot.name = "DirtSpot_" + i;
+				dirtSpot.name = $"DirtSpot_{t.Position}";
 				dirtSpot.transform.localScale = new Vector3(0.5f, 0.5f, 1);
-				dirtSpot.GetComponent<SpriteRenderer>().sprite = value[i];
+				dirtSpot.GetComponent<SpriteRenderer>().sprite = t.Image;
 
 
 				// If the dirt spot is null, place it in a random position
-				if (Globals.TrashPositionMap[_currentFloor][i].Equals(Vector3.negativeInfinity))
+				if (t.Position.Equals(Vector3.negativeInfinity))
 				{
-					Bounds b = _tilemaps[0].localBounds;
+					// Spot already known
+					dirtSpot.transform.position = t.Position;
+					continue;
+				}
+
+				var b = _tilemaps[0].localBounds;
 					b.extents = new Vector3(b.extents.x - 1.5f, b.extents.y - 1.5f, b.extents.z);
 
 					TileBase tileAtPosition;
@@ -137,15 +142,10 @@ public class DirtSpotDistributor : MonoBehaviour
 					);
 
 					// Store position
-					Globals.TrashPositionMap[_currentFloor][i] = dirtSpot.transform.position;
+					t.Position = dirtSpot.transform.position;
 
 					// Rename
-					dirtSpot.name = "DirtSpot_" + dirtSpot.transform.position;
-				}
-				else
-				{
-					dirtSpot.transform.position = Globals.TrashPositionMap[_currentFloor][i];
-				}
+					dirtSpot.name = "DirtSpot_" + t.Position;
 			}
 		}
 
