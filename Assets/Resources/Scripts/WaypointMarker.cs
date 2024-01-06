@@ -1,8 +1,10 @@
 using UnityEngine;
 
-public class PositionMarker : MonoBehaviour
+public class WaypointMarker : MonoBehaviour
 {
     public Color color = Color.magenta;
+    [Tooltip("Wait time in seconds at this position")]
+    public float waitTime;
     
 #if UNITY_EDITOR
     private void OnDrawGizmos()
