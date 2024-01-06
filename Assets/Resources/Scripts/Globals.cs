@@ -7,8 +7,24 @@ using Random = UnityEngine.Random;
 
 public static class Globals
 {
+	// Times in seconds for guests range of leaving
+	public const int MIN_TIME_UNTIL_LEAVE = 10 * 60;
+	public const int MAX_TIME_UNTIL_LEAVE = 20 * 60;
+
+	// Total time in seconds of the game running
+	public static double TotalTimeRunning = 0;
+
+	public static readonly Dictionary<string, float> TimeUntilGuestLeaves = new()
+	{
+		{ "Activist", Random.Range(MIN_TIME_UNTIL_LEAVE, MAX_TIME_UNTIL_LEAVE) },
+		{ "Artist", Random.Range(MIN_TIME_UNTIL_LEAVE, MAX_TIME_UNTIL_LEAVE) },
+		{ "Child", Random.Range(MIN_TIME_UNTIL_LEAVE, MAX_TIME_UNTIL_LEAVE) },
+		{ "Student", Random.Range(MIN_TIME_UNTIL_LEAVE, MAX_TIME_UNTIL_LEAVE) },
+		{ "Teacher", Random.Range(MIN_TIME_UNTIL_LEAVE, MAX_TIME_UNTIL_LEAVE) }
+	};
+	
 	// Holds the names of all guests and their respective status if they left the hotel
-	public static readonly Dictionary<string, bool> ActiveGuests = new()
+	public static readonly Dictionary<string, bool> ActiveGuestMap = new()
 	{
 		{ "Activist", true },
 		{ "Artist", true },
