@@ -7,6 +7,16 @@ using Random = UnityEngine.Random;
 
 public static class Globals
 {
+	// Holds the names of all guests and their respective status if they left the hotel
+	public static readonly Dictionary<string, bool> ActiveGuests = new()
+	{
+		{ "Activist", true },
+		{ "Artist", true },
+		{ "Child", true },
+		{ "Student", true },
+		{ "Teacher", true }
+	};
+	
 	public const int MAX_TRASH_PER_FLOOR = 2;
 	public static int CurrentFloor => Floors.IndexOf(SceneManager.GetActiveScene().name);
 
