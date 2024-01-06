@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
  
     private Queue<DialogueLine> lines;
     
-    public bool isDialogueActive = false;
+    public static bool IsDialogueActive { get; private set; }
  
     public float typingSpeed = 0.1f;
  
@@ -31,7 +31,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        isDialogueActive = true;
+        IsDialogueActive = true;
  
         animator.Play("in");
  
@@ -75,7 +75,7 @@ public class DialogueManager : MonoBehaviour
  
     void EndDialogue()
     {
-        isDialogueActive = false;
+        IsDialogueActive = false;
         animator.Play("out");
     }
 }
