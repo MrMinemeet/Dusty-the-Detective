@@ -92,7 +92,7 @@ public class DirtSpotDistributor : MonoBehaviour
 
 
 				// If the dirt spot is null, place it in a random position
-				if (t.Position.Equals(Vector3.negativeInfinity))
+				if (!t.Position.Equals(Vector3.negativeInfinity))
 				{
 					// Spot already known
 					dirtSpot.transform.position = t.Position;
