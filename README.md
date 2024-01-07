@@ -30,3 +30,4 @@ This repository holds the source code for the game "*Dusty the Detective*" for t
 * Some NPCs generated with [Character Generator Program](https://pipoya.itch.io/pipoya-free-rpg-character-sprites-32x32/devlog/108932/character-generator-program) by Pipoya
 * Crosshair (Arrow to dirt spots) from [Crosshair Pack](https://kenney-assets.itch.io/crosshair-pack) by Kenney
 * Broom GIF from [Gifer](https://gifer.com/en/YpGV)
+* Brush.wav from [Freesound](https://freesound.org/s/655623/) by Hankof
