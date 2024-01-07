@@ -66,7 +66,7 @@ public class WalksoundManager : MonoBehaviour
 		_audioSource.Play();
 	}
 
-	private FloorType GetFloorTypeFrom(List<TileBase> tbList)
+	private static FloorType GetFloorTypeFrom(List<TileBase> tbList)
 	{
 		FloorType floorType = Wood;
 		foreach (var tb in tbList)
