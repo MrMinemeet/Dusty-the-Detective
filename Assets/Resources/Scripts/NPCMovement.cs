@@ -60,8 +60,8 @@ public class Movement : MonoBehaviour
 		
 		if (Vector2.Distance(transform.position, _targetWaypoint.Position) <= 0.35f)
 		{
-			// Avoid looping sound
-			if (!_soundPlayed) {
+			// Avoid looping sound and don't play sound if audio source is disabled
+			if (!_soundPlayed && _audioSource.enabled) {
 				PlaySound(_targetWaypoint.AudioClip, _targetWaypoint.Volume);
 				_soundPlayed = true;
 			}
