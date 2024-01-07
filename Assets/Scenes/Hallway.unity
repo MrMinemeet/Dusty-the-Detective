@@ -497,6 +497,36 @@ MonoBehaviour:
         name: Maid
         icon: {fileID: 2131280070, guid: 8de5803d76be11d46b17b62094469957, type: 3}
       line: Talk to me when you have finished.
+  thirdDialogue:
+    dialogueLines:
+    - character:
+        name: Maid
+        icon: {fileID: 2131280070, guid: 8de5803d76be11d46b17b62094469957, type: 3}
+      line: 'Ok dusty, it seems you have finished.
+
+        So here are my three
+        hints.'
+    - character:
+        name: Maid
+        icon: {fileID: 2131280070, guid: 8de5803d76be11d46b17b62094469957, type: 3}
+      line: 1. The guy with the red bottle in his room seems to be a student. On
+        every thursday he is leaving early. Sometimes he comes back very late, at
+        about midnight, unable to walk straight.
+    - character:
+        name: Maid
+        icon: {fileID: 2131280070, guid: 8de5803d76be11d46b17b62094469957, type: 3}
+      line: Sometimes he comes back very late, at about midnight, unable to walk
+        straight.
+    - character:
+        name: Maid
+        icon: {fileID: 2131280070, guid: 8de5803d76be11d46b17b62094469957, type: 3}
+      line: 2. The math teacher often says during dinner "Zu vino sag ich nie no".
+    - character:
+        name: Maid
+        icon: {fileID: 2131280070, guid: 8de5803d76be11d46b17b62094469957, type: 3}
+      line: 3. glue = coming to late to work.
+  guiltyDialogue:
+    dialogueLines: []
 --- !u!61 &329821760
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1101,7 +1131,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3322991, y: 9.373951, z: -10}
+  m_LocalPosition: {x: -1.3322989, y: 9.373955, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

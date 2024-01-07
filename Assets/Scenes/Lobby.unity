@@ -294,7 +294,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 76128505461826910, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 348.9
+      value: 347
       objectReference: {fileID: 0}
     - target: {fileID: 76128505461826910, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -316,6 +316,38 @@ PrefabInstance:
       propertyPath: typingSpeed
       value: 0.001
       objectReference: {fileID: 0}
+    - target: {fileID: 1568489971733857162, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: guiltAnimator
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751143993730400254, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751143993730400254, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: accuseTeacher
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275192651114702496, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_Name
+      value: TeacherButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275192651114702496, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654547317364608721, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654547317364608721, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: accuseStudent
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800690380588254195, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5397561308642434191, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8441516
@@ -324,6 +356,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -235
       objectReference: {fileID: 0}
+    - target: {fileID: 5630188774131226868, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630188774131226868, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: accuseArtist
+      objectReference: {fileID: 0}
     - target: {fileID: 6059923317612618945, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
       propertyPath: m_SortingOrder
       value: 10
@@ -331,6 +371,14 @@ PrefabInstance:
     - target: {fileID: 6643581736793618663, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
       propertyPath: m_text
       value: next...
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665097263881260540, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665097263881260540, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: accuseActivist
       objectReference: {fileID: 0}
     - target: {fileID: 6743852514541926416, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
       propertyPath: m_LocalPosition.x
@@ -372,6 +420,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7523563313908680542, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1892379644}
+    - target: {fileID: 7523563313908680542, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: characterName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523563313908680542, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: guiltAnimator
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7892184471640018095, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -379,6 +439,14 @@ PrefabInstance:
     - target: {fileID: 7892184471640018095, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisplayNextDialogueLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037009816284828601, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037009816284828601, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: accuseChild
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -675,6 +743,10 @@ MonoBehaviour:
         icon: {fileID: 1950727019, guid: 466e19469c1b51d4193110690e75b9d7, type: 3}
       line: Hey Dusty, nice to see you again.
   secondlDialogue:
+    dialogueLines: []
+  thirdDialogue:
+    dialogueLines: []
+  guiltyDialogue:
     dialogueLines: []
 --- !u!61 &440919959
 BoxCollider2D:
@@ -3585,6 +3657,22 @@ MonoBehaviour:
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: Oh, dusty. I know that you are fast, but that's to fast. You will find
         me here after you finished your task.
+  thirdDialogue:
+    dialogueLines: []
+  guiltyDialogue:
+    dialogueLines:
+    - character:
+        name: Manager
+        icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
+      line: Did you find out who is responsible for the spilled wine?
+    - character:
+        name: Manager
+        icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
+      line: And what about the ugly vomit?
+    - character:
+        name: Manager
+        icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
+      line: Last but not least, who spilled glue on the floor?
 --- !u!61 &626894724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12345,6 +12433,10 @@ MonoBehaviour:
       line: FORTNITE FORTNITE FORTNITE
   secondlDialogue:
     dialogueLines: []
+  thirdDialogue:
+    dialogueLines: []
+  guiltyDialogue:
+    dialogueLines: []
 --- !u!61 &1808304556
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12583,6 +12675,10 @@ MonoBehaviour:
       line: My son loves playing fortnite, it is good for me, so I can do my math
         stuff.
   secondlDialogue:
+    dialogueLines: []
+  thirdDialogue:
+    dialogueLines: []
+  guiltyDialogue:
     dialogueLines: []
 --- !u!61 &2116583005
 BoxCollider2D:
