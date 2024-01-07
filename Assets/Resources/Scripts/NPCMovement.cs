@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
 	private Waypoint _targetWaypoint;
 	private float _currentlyWaitedTime;
 	private bool _isInConversation;
+	private bool _soundPlayed;
 	private AudioSource _audioSource;
 
 	private void Awake()
@@ -59,8 +60,11 @@ public class Movement : MonoBehaviour
 		
 		if (Vector2.Distance(transform.position, _targetWaypoint.Position) <= 0.35f)
 		{
-			
-			PlaySound(_targetWaypoint.AudioClip, _targetWaypoint.Volume);
+			// Avoid looping sound
+			if (!_soundPlayed) {
+				PlaySound(_targetWaypoint.AudioClip, _targetWaypoint.Volume);
+				_soundPlayed = true;
+			}
 			
 			// Target reached, wait
 			_currentlyWaitedTime += Time.deltaTime;
@@ -69,6 +73,7 @@ public class Movement : MonoBehaviour
 				_currentlyWaitedTime = 0f;
 				
 				// Finished waiting at last waypoint, stop sound
+				_soundPlayed = false;
 				StopSound();
 				
 				// Wait time over, get new target
@@ -111,10 +116,8 @@ public class Movement : MonoBehaviour
 	 */
 	private void PlaySound(AudioClip audioClip, float volume)
 	{
-		if (_audioSource == null || audioClip == null || _audioSource.isPlaying || volume == 0f) return;
-		_audioSource.clip = audioClip;
-		_audioSource.volume = volume;
-		_audioSource.Play();
+		if (_audioSource == null || audioClip == null || volume == 0f) return;
+		_audioSource.PlayOneShot(audioClip, volume); // Allow multiple sounds to be played without interrupting each other
 	}
 
 	/**
@@ -122,6 +125,7 @@ public class Movement : MonoBehaviour
 	 */
 	private void StopSound()
 	{
-		if(_audioSource != null) _audioSource.Stop();
+		if (_audioSource != null) _audioSource.Stop();
+
 	}
 }

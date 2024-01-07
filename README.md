@@ -32,3 +32,4 @@ This repository holds the source code for the game "*Dusty the Detective*" for t
 * Broom GIF from [Gifer](https://gifer.com/en/YpGV)
 * Brush.wav from [Freesound](https://freesound.org/s/655623/) by Hankof
 * Keyboard_Fast.wav from [Freesound](https://freesound.org/s/333579/) by deleted_user_5889546 (no actual name anymore)
+* Female hmm from [Freesound](https://freesound.org/s/170767/) by esperar (split to separate files)
