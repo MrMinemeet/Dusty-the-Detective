@@ -59,8 +59,10 @@ public class DialogueManager : MonoBehaviour
         characterName.text = currentLine.character.name;
  
         StopAllCoroutines();
- 
+        
         StartCoroutine(TypeSentence(currentLine));
+        
+       
     }
  
     IEnumerator TypeSentence(DialogueLine dialogueLine)
