@@ -31,3 +31,4 @@ This repository holds the source code for the game "*Dusty the Detective*" for t
 * Crosshair (Arrow to dirt spots) from [Crosshair Pack](https://kenney-assets.itch.io/crosshair-pack) by Kenney
 * Broom GIF from [Gifer](https://gifer.com/en/YpGV)
 * Brush.wav from [Freesound](https://freesound.org/s/655623/) by Hankof
+* Keyboard_Fast.wav from [Freesound](https://freesound.org/s/333579/) by deleted_user_5889546 (no actual name anymore)
