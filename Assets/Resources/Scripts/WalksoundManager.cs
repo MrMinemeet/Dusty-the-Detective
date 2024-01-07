@@ -26,40 +26,41 @@ public class WalksoundManager : MonoBehaviour
 		_rigidbody2D = GetComponentInParent<Rigidbody2D>();
 
 		// Convert list to an actual dictionary
-		foreach (var kvp in floorSounds)
+		foreach (KeyValuePair kvp in floorSounds)
 		{
 			if (kvp.val == null) Debug.LogError($"Audio clip of '{kvp.key}' in '{transform.parent.name}' is null");
 			_floorSounds.Add(kvp.key, kvp.val);
 		}
 
 		// Get all tilemaps
-		var grid = GameObject.Find("Grid");
-		foreach (var obj in grid.GetComponentsInChildren<Transform>().Select(t => t.gameObject))
+		foreach (GameObject obj in  GameObject.Find("Grid")
+			         .GetComponentsInChildren<Transform>()
+			         .Select(t => t.gameObject))
 		{
-			var tileMap = obj.GetComponent<Tilemap>();
+			Tilemap tileMap = obj.GetComponent<Tilemap>();
 			if (tileMap != null)
 				_tilemaps.Add(tileMap);
 		}
 	}
 
-	private void FixedUpdate()
+	private void Update()
 	{
 		if (_rigidbody2D.velocity == Vector2.zero)
 		{
-			// Object is not moving, stop walking sound by disabling the audio source
+			// Object is not moving
 			_audioSource.enabled = false;
 			return;
 		}
 
 		// Object is moving, enable audio source and play the correct sound depending on the floor type
-		var position = transform.position - new Vector3(0, 0.5f, 0); // Add offset to feet
+		Vector3 position = transform.position - new Vector3(0, 0.5f, 0); // Add offset to feet
 		// Get all tiles at the position 
-		var tiles = _tilemaps
+		List<TileBase> tiles = _tilemaps
 			.FindAll(tm => tm.GetTile(tm.WorldToCell(position)) != null)
 			.ConvertAll(tm => tm.GetTile(tm.WorldToCell(position)));
 		_audioSource.enabled = true;
 		
-		var newClip = _floorSounds[GetFloorTypeFrom(tiles)];
+		AudioClip newClip = _floorSounds[GetFloorTypeFrom(tiles)];
 		if (_audioSource.clip == newClip) return; // Skip if the clip is already playing
 		
 		_audioSource.clip = newClip;
@@ -69,7 +70,7 @@ public class WalksoundManager : MonoBehaviour
 	private static FloorType GetFloorTypeFrom(List<TileBase> tbList)
 	{
 		FloorType floorType = Wood;
-		foreach (var tb in tbList)
+		foreach (TileBase tb in tbList)
 			if (WoodFloor.Contains(tb.name)) floorType = Wood;
 			else if (CarpetFloor.Contains(tb.name)) return Carpet;
 			else floorType = CeramicTile;
