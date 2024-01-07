@@ -68,7 +68,7 @@ public class WalksoundManager : MonoBehaviour
 
 	private FloorType GetFloorTypeFrom(List<TileBase> tbList)
 	{
-		var floorType = Wood;
+		FloorType floorType = Wood;
 		foreach (var tb in tbList)
 			if (WoodFloor.Contains(tb.name)) floorType = Wood;
 			else if (CarpetFloor.Contains(tb.name)) return Carpet;
