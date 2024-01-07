@@ -33,3 +33,6 @@ This repository holds the source code for the game "*Dusty the Detective*" for t
 * Brush.wav from [Freesound](https://freesound.org/s/655623/) by Hankof
 * Keyboard_Fast.wav from [Freesound](https://freesound.org/s/333579/) by deleted_user_5889546 (no actual name anymore)
 * Female hmm from [Freesound](https://freesound.org/s/170767/) by esperar (split to separate files)
+* Walking_on_wood.wav from [Freesound](https://freesound.org/s/533044/) by Nox_Sound (first two steps extracted)
+* Walking_on_carpet.wav from [Freesound](https://freesound.org/s/543523/) by Shneak (cut to mimic steps of `Walking_on_wood.wav` in terms of timing)
+* Walking_on_tile.wav from [Freesound](https://freesound.org/s/689127/) by Pelouta (cut to mimic steps of `Walking_on_wood.wav` in terms of timing)
