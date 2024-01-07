@@ -651,6 +651,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5159381940372875278, guid: 4ae7d9a649de2834bb16c4919d8a7fb4, type: 3}
   m_PrefabInstance: {fileID: 4461577270012040626}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &440919957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4638309811849757344, guid: 61ac66706162f924f8911d614ddc53f7, type: 3}
+  m_PrefabInstance: {fileID: 3840325540265338684}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &440919958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440919957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb98a8cd4c318344b82ca92f245325ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: Porter
+        icon: {fileID: 1950727019, guid: 466e19469c1b51d4193110690e75b9d7, type: 3}
+      line: Hey Dusty, nice to see you again.
+  secondlDialogue:
+    dialogueLines: []
+--- !u!61 &440919959
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440919957}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.06717308}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.45434615}
+  m_EdgeRadius: 0
 --- !u!1 &449795961
 GameObject:
   m_ObjectHideFlags: 0
@@ -3491,6 +3561,13 @@ MonoBehaviour:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: See ya.
+  secondlDialogue:
+    dialogueLines:
+    - character:
+        name: Manager
+        icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
+      line: Oh, dusty. I know that you are fast, but that's to fast. You will find
+        me here after you finished your task.
 --- !u!61 &626894724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12185,6 +12262,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5159381940372875278, guid: 4ae7d9a649de2834bb16c4919d8a7fb4, type: 3}
   m_PrefabInstance: {fileID: 1750394509}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1808304547 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5323293027315192064, guid: 7e6996fa09ae48c499b2c35513b9ee07, type: 3}
+  m_PrefabInstance: {fileID: 821855979791529114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1808304555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808304547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb98a8cd4c318344b82ca92f245325ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: Child
+        icon: {fileID: 680118756, guid: da7f1d5d231cf574ea123b2a3d748e72, type: 3}
+      line: FORTNITE FORTNITE FORTNITE
+  secondlDialogue:
+    dialogueLines: []
+--- !u!61 &1808304556
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808304547}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.06413813}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.44827625}
+  m_EdgeRadius: 0
 --- !u!1001 &1870334707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12358,6 +12505,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5159381940372875278, guid: 4ae7d9a649de2834bb16c4919d8a7fb4, type: 3}
   m_PrefabInstance: {fileID: 1214046050}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2116582996 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7994856586573130853, guid: 531919e4179746b4da5a49c602d6964c, type: 3}
+  m_PrefabInstance: {fileID: 1108708555427121675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2116583004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116582996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb98a8cd4c318344b82ca92f245325ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: Teacher
+        icon: {fileID: 585418526, guid: 2a14c8e066e8eed4c885ef6002c0ee22, type: 3}
+      line: My son loves playing fortnite, it is good for me, so I can do my math
+        stuff.
+  secondlDialogue:
+    dialogueLines: []
+--- !u!61 &2116583005
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116582996}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.058975115}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.43795022}
+  m_EdgeRadius: 0
 --- !u!1001 &354926562496187736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12587,7 +12805,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7402793302613230391, guid: 7e6996fa09ae48c499b2c35513b9ee07, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1361657657}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5323293027315192064, guid: 7e6996fa09ae48c499b2c35513b9ee07, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1808304556}
+    - targetCorrespondingSourceObject: {fileID: 5323293027315192064, guid: 7e6996fa09ae48c499b2c35513b9ee07, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1808304555}
   m_SourcePrefab: {fileID: 100100000, guid: 7e6996fa09ae48c499b2c35513b9ee07, type: 3}
 --- !u!1001 &1108708555427121675
 PrefabInstance:
@@ -12671,7 +12895,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1555449224441428372, guid: 531919e4179746b4da5a49c602d6964c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 95408944}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7994856586573130853, guid: 531919e4179746b4da5a49c602d6964c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2116583005}
+    - targetCorrespondingSourceObject: {fileID: 7994856586573130853, guid: 531919e4179746b4da5a49c602d6964c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2116583004}
   m_SourcePrefab: {fileID: 100100000, guid: 531919e4179746b4da5a49c602d6964c, type: 3}
 --- !u!1001 &1780953355894848216
 PrefabInstance:
@@ -12810,7 +13040,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3883208513018126219, guid: 61ac66706162f924f8911d614ddc53f7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1947712370}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4638309811849757344, guid: 61ac66706162f924f8911d614ddc53f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 440919959}
+    - targetCorrespondingSourceObject: {fileID: 4638309811849757344, guid: 61ac66706162f924f8911d614ddc53f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 440919958}
   m_SourcePrefab: {fileID: 100100000, guid: 61ac66706162f924f8911d614ddc53f7, type: 3}
 --- !u!1001 &4461577270012040626
 PrefabInstance:

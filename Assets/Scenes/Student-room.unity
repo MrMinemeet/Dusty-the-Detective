@@ -714,6 +714,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5159381940372875278, guid: 4ae7d9a649de2834bb16c4919d8a7fb4, type: 3}
   m_PrefabInstance: {fileID: 2045091141}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &634083840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5760555234743313032, guid: 7ed742fb241b16c4ca205d64b9333794, type: 3}
+  m_PrefabInstance: {fileID: 1417567956}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &634083841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634083840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb98a8cd4c318344b82ca92f245325ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: Student
+        icon: {fileID: -341927286, guid: cc0429840ed12ce44b286d168412ddd5, type: 3}
+      line: I cannot wait for the next Mensafest.
+  secondlDialogue:
+    dialogueLines: []
+--- !u!61 &634083842
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634083840}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.03640531}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.3928106}
+  m_EdgeRadius: 0
 --- !u!1 &663763367
 GameObject:
   m_ObjectHideFlags: 3
@@ -3440,7 +3510,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 630769661780516513, guid: 7ed742fb241b16c4ca205d64b9333794, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1736306877}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5760555234743313032, guid: 7ed742fb241b16c4ca205d64b9333794, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 634083842}
+    - targetCorrespondingSourceObject: {fileID: 5760555234743313032, guid: 7ed742fb241b16c4ca205d64b9333794, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 634083841}
   m_SourcePrefab: {fileID: 100100000, guid: 7ed742fb241b16c4ca205d64b9333794, type: 3}
 --- !u!1001 &1420819054
 PrefabInstance:
@@ -3698,7 +3774,7 @@ Transform:
   m_GameObject: {fileID: 1588985572}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6131892, y: -3.830494, z: -10}
+  m_LocalPosition: {x: 1.6135707, y: -3.830495, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

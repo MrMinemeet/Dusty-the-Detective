@@ -24,10 +24,31 @@ public class Dialogue
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
+    public Dialogue secondlDialogue;
+    private static bool firstDialoguePlayedMaid = false;
+    private static bool firstDialoguePlayedManager = false;
 
     public void TriggerDialogue()
     {
-        DialogueManager.Instance.StartDialogue(dialogue);
+        if (firstDialoguePlayedMaid && name == "Maid")
+        {
+            DialogueManager.Instance.StartDialogue(secondlDialogue);
+        }
+        else if(firstDialoguePlayedManager && name == "Manager")
+        {
+            DialogueManager.Instance.StartDialogue(secondlDialogue);
+        }
+        else
+        {
+            if (name == "Maid")
+            {
+                firstDialoguePlayedMaid = true;
+            } else if (name == "Manager")
+            {
+                firstDialoguePlayedManager = true;
+            }
+            DialogueManager.Instance.StartDialogue(dialogue);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
