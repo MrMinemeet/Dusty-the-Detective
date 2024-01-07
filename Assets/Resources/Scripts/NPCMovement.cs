@@ -6,13 +6,15 @@ public class Movement : MonoBehaviour
 	[SerializeField] private float _speed = 1f;
 	private readonly List<Waypoint> _path = new();
 	private Rigidbody2D _rigidBody;
-	private Waypoint _target;
-	private float _waitTime;
+	private Waypoint _targetWaypoint;
+	private float _currentlyWaitedTime;
 	private bool _isInConversation;
+	private AudioSource _audioSource;
 
 	private void Awake()
 	{
 		_rigidBody = GetComponent<Rigidbody2D>();
+		_audioSource = GetComponent<AudioSource>();
 
 		// Get child "PathPositions" object
 		Transform pathPositions = transform.Find("PathPositions");
@@ -24,7 +26,10 @@ public class Movement : MonoBehaviour
 
 		// Get all children of "PathPositions" object
 		foreach (Transform child in pathPositions)
-			_path.Add(new Waypoint(child.position, child.GetComponent<WaypointMarker>().waitTime));
+		{
+			WaypointMarker wpm = child.GetComponent<WaypointMarker>();
+			_path.Add(new Waypoint(child.position, wpm));
+		}
 
 		// Destroy "PathPositions" object as they are not needed when the game is running
 		Destroy(pathPositions.gameObject);
@@ -40,7 +45,7 @@ public class Movement : MonoBehaviour
 		}
 
 		// Move to first position in path
-		_target = _path[0];
+		_targetWaypoint = _path[0];
 	}
 
 	private void FixedUpdate()
@@ -52,16 +57,22 @@ public class Movement : MonoBehaviour
 			return;
 		}
 		
-		if (Vector2.Distance(transform.position, _target.Position) <= 0.35f)
+		if (Vector2.Distance(transform.position, _targetWaypoint.Position) <= 0.35f)
 		{
+			
+			PlaySound(_targetWaypoint.AudioClip, _targetWaypoint.Volume);
+			
 			// Target reached, wait
-			_waitTime += Time.deltaTime;
-			if (_waitTime >= _target.WaitTime)
+			_currentlyWaitedTime += Time.deltaTime;
+			if (_currentlyWaitedTime >= _targetWaypoint.WaitTime)
 			{
-				_waitTime = 0f;
-
+				_currentlyWaitedTime = 0f;
+				
+				// Finished waiting at last waypoint, stop sound
+				StopSound();
+				
 				// Wait time over, get new target
-				_target = GetNewTarget();
+				_targetWaypoint = GetNewTarget();
 			}
 			else
 			{
@@ -72,7 +83,7 @@ public class Movement : MonoBehaviour
 		}
 
 		// Move towards target using velocity
-		_rigidBody.velocity = (_target.Position - (Vector2)transform.position).normalized * _speed;
+		_rigidBody.velocity = (_targetWaypoint.Position - (Vector2)transform.position).normalized * _speed;
 	}
 
 	/**
@@ -83,14 +94,34 @@ public class Movement : MonoBehaviour
 	private Waypoint GetNewTarget()
 	{
 		// If at end of path, go back to start
-		return _path.IndexOf(_target) == _path.Count - 1
+		return _path.IndexOf(_targetWaypoint) == _path.Count - 1
 			? _path[0]
 			// Otherwise, go to next position in path
-			: _path[_path.IndexOf(_target) + 1];
+			: _path[_path.IndexOf(_targetWaypoint) + 1];
 	}
 
 	private void OnTriggerStay2D(Collider2D other)
 	{
 		_isInConversation = other.CompareTag("Player") && DialogueManager.IsDialogueActive;
+	}
+	
+	/**
+	 * Plays the passed audio clip.
+	 * Playback is skipped if _audioSource is null, the audioClip is null, the audioSource is already playing or the volume is 0.
+	 */
+	private void PlaySound(AudioClip audioClip, float volume)
+	{
+		if (_audioSource == null || audioClip == null || _audioSource.isPlaying || volume == 0f) return;
+		_audioSource.clip = audioClip;
+		_audioSource.volume = volume;
+		_audioSource.Play();
+	}
+
+	/**
+	 * Stops the audioSource from playing
+	 */
+	private void StopSound()
+	{
+		if(_audioSource != null) _audioSource.Stop();
 	}
 }
