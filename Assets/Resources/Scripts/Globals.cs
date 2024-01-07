@@ -11,6 +11,13 @@ public static class Globals
 	// Times in seconds for guests range of leaving
 	public const int MIN_TIME_UNTIL_LEAVE = 10 * 60;
 	public const int MAX_TIME_UNTIL_LEAVE = 20 * 60;
+	
+	//bools for correct assuming which npc was guilty, used by DialogueManager
+	public static bool vomitCorrect = false;
+	public static bool spilledWineCorrect = false;
+	public static bool glueCorrect = false;
+	//bool for animating the correct guilt dialogue
+	public static bool showGuiltDialogue = false;
 
 	// Total time in seconds of the game running
 	public static double TotalTimeRunning = 0;

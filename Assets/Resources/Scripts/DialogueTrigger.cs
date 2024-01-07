@@ -25,18 +25,36 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
     public Dialogue secondlDialogue;
+    public Dialogue thirdDialogue;
+    public Dialogue guiltyDialogue;
     private static bool firstDialoguePlayedMaid = false;
+    private static bool allDirtRemoved = false;
+    
     private static bool firstDialoguePlayedManager = false;
 
     public void TriggerDialogue()
     {
-        if (firstDialoguePlayedMaid && name == "Maid")
+        if (Globals.LeftoverTrash == 0)
+        {
+            allDirtRemoved = true;
+        }
+        
+        if (firstDialoguePlayedMaid && name == "Maid" && !allDirtRemoved)
         {
             DialogueManager.Instance.StartDialogue(secondlDialogue);
         }
-        else if(firstDialoguePlayedManager && name == "Manager")
+        else if (firstDialoguePlayedMaid && name == "Maid" && allDirtRemoved)
+        {
+            DialogueManager.Instance.StartDialogue(thirdDialogue);
+        }
+        else if(firstDialoguePlayedManager && name == "Manager" && !allDirtRemoved)
         {
             DialogueManager.Instance.StartDialogue(secondlDialogue);
+        }
+        else if (firstDialoguePlayedManager && name == "Manager" && allDirtRemoved)
+        {
+            Globals.showGuiltDialogue = true;
+            DialogueManager.Instance.StartDialogue(guiltyDialogue);
         }
         else
         {

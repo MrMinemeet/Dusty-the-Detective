@@ -1212,6 +1212,10 @@ MonoBehaviour:
         gain extra creativity.
   secondlDialogue:
     dialogueLines: []
+  thirdDialogue:
+    dialogueLines: []
+  guiltyDialogue:
+    dialogueLines: []
 --- !u!61 &718396778
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13081,6 +13085,10 @@ MonoBehaviour:
       line: I can not remember when was the last time a guest ordered to much wine.
   secondlDialogue:
     dialogueLines: []
+  thirdDialogue:
+    dialogueLines: []
+  guiltyDialogue:
+    dialogueLines: []
 --- !u!61 &1936776107
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13472,6 +13480,10 @@ MonoBehaviour:
       line: Julia is doing way to much here. She always has to clean the mess.
   secondlDialogue:
     dialogueLines: []
+  thirdDialogue:
+    dialogueLines: []
+  guiltyDialogue:
+    dialogueLines: []
 --- !u!61 &2132489328
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13590,6 +13602,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 76128505461826910, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 347
+      objectReference: {fileID: 0}
     - target: {fileID: 681135668809790163, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
       propertyPath: m_Name
       value: UI

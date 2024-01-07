@@ -20,6 +20,8 @@ public class DialogueManager : MonoBehaviour
     public float typingSpeed = 0.1f;
  
     public Animator animator;
+
+    private static int guiltCounter = 0;
  
     private void Awake()
     {
@@ -32,8 +34,16 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         IsDialogueActive = true;
- 
-        animator.Play("in");
+
+        if (Globals.showGuiltDialogue)
+        {
+            animator.Play("inGuilt");
+        }
+        else
+        {
+            animator.Play("in");
+        }
+        
  
         lines.Clear();
  
@@ -64,6 +74,57 @@ public class DialogueManager : MonoBehaviour
         
        
     }
+
+    public void accuse(String name)
+    {
+        if (guiltCounter == 0)
+        {
+            if (name == "Teacher")
+            {
+                Globals.spilledWineCorrect = true;
+            }
+            guiltCounter = 1;
+        } else if (guiltCounter == 1)
+        {
+            if (name == "Student")
+            {
+                Globals.vomitCorrect = true;
+            }
+            guiltCounter = 2;
+        } else if (guiltCounter == 2)
+        {
+            if (name == "Activist")
+            {
+                Globals.glueCorrect = true;
+            }
+        }
+        DisplayNextDialogueLine();
+    }
+
+    public void accuseTeacher()
+    {
+        accuse("Teacher");
+    }
+    
+    public void accuseChild()
+    {
+        accuse("Child");
+    }
+    
+    public void accuseStudent()
+    {
+        accuse("Student");
+    }
+    
+    public void accuseActivist()
+    {
+        accuse("Activist");
+    }
+    
+    public void accuseArtist()
+    {
+        accuse("Artist");
+    }
  
     IEnumerator TypeSentence(DialogueLine dialogueLine)
     {
@@ -78,6 +139,13 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         IsDialogueActive = false;
-        animator.Play("out");
+        if (Globals.showGuiltDialogue)
+        {
+            animator.Play("outGuilt");
+        }
+        else
+        {
+            animator.Play("out");
+        }
     }
 }
