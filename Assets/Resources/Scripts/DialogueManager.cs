@@ -31,10 +31,9 @@ public class DialogueManager : MonoBehaviour
         lines = new Queue<DialogueLine>();
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(Dialogue dialogue, AudioSource audioSource)
     {
         IsDialogueActive = true;
-
         if (Globals.showGuiltDialogue)
         {
             animator.Play("inGuilt");
@@ -52,10 +51,10 @@ public class DialogueManager : MonoBehaviour
             lines.Enqueue(dialogueLine);
         }
  
-        DisplayNextDialogueLine();
+        DisplayNextDialogueLine(audioSource);
     }
  
-    public void DisplayNextDialogueLine()
+    public void DisplayNextDialogueLine(AudioSource audioSource)
     {
         if (lines.Count == 0)
         {
@@ -69,13 +68,15 @@ public class DialogueManager : MonoBehaviour
         characterName.text = currentLine.character.name;
  
         StopAllCoroutines();
-        
+
+        if(audioSource != null) audioSource.PlayOneShot(currentLine.Audio);
+
         StartCoroutine(TypeSentence(currentLine));
         
        
     }
 
-    public void accuse(String name)
+    public void accuse(String name, AudioSource audioSource)
     {
         if (guiltCounter == 0)
         {
@@ -98,32 +99,32 @@ public class DialogueManager : MonoBehaviour
                 Globals.glueCorrect = true;
             }
         }
-        DisplayNextDialogueLine();
+        DisplayNextDialogueLine(audioSource);
     }
 
-    public void accuseTeacher()
+    public void accuseTeacher(AudioSource audioSource)
     {
-        accuse("Teacher");
+        accuse("Teacher", audioSource);
     }
     
-    public void accuseChild()
+    public void accuseChild(AudioSource audioSource)
     {
-        accuse("Child");
+        accuse("Child", audioSource);
     }
     
-    public void accuseStudent()
+    public void accuseStudent(AudioSource audioSource)
     {
-        accuse("Student");
+        accuse("Student", audioSource);
     }
     
-    public void accuseActivist()
+    public void accuseActivist(AudioSource audioSource)
     {
-        accuse("Activist");
+        accuse("Activist", audioSource);
     }
     
-    public void accuseArtist()
+    public void accuseArtist(AudioSource audioSource)
     {
-        accuse("Artist");
+        accuse("Artist", audioSource);
     }
  
     IEnumerator TypeSentence(DialogueLine dialogueLine)

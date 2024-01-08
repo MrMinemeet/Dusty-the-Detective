@@ -441,12 +441,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7892184471640018095, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892184471640018095, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1892379641}
     - target: {fileID: 7892184471640018095, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisplayNextDialogueLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892184471640018095, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1747233483}
+    - target: {fileID: 7892184471640018095, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8037009816284828601, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -463,6 +475,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8966302800921364341, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1892379644}
+    - targetCorrespondingSourceObject: {fileID: 2800690380588254195, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1747233483}
   m_SourcePrefab: {fileID: 100100000, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
 --- !u!1001 &153370044
 PrefabInstance:
@@ -750,6 +765,7 @@ MonoBehaviour:
         name: Porter
         icon: {fileID: 1950727019, guid: 466e19469c1b51d4193110690e75b9d7, type: 3}
       line: Hey Dusty, nice to see you again.
+      Audio: {fileID: 8300000, guid: eb690dde8c5b04b43a413a2026c59418, type: 3}
   secondlDialogue:
     dialogueLines: []
   thirdDialogue:
@@ -1322,51 +1338,62 @@ MonoBehaviour:
       line: "Hey Dusty! I am sorry for calling you again, but as it looks like we
         are again facing with guest who are felling like they \r\ncould do what they
         want."
+      Audio: {fileID: 0}
     - character:
         name: Player
         icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
       line: Ok, I understand. What kind of guests are it this time?
+      Audio: {fileID: 0}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: Two days ago five new guests have checked in, it seems like some of them
         are responsible for the dirt.
+      Audio: {fileID: 0}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: The first looks like a climate activist, I mean he even doesn't have
         any clothes on, beside a small leave which is covering his *****.
+      Audio: {fileID: 0}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: The second and thrid one checked in together. A father with his small
         son. I think that the father is a math teacher.
+      Audio: {fileID: 0}
     - character:
         name: Player
         icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
       line: If he is a math teacher, then we are no friends, i hate math.
+      Audio: {fileID: 0}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: Regarding the last two, i cannot say much about them, they appear like
         normal people. Maybe you can talk with them, to get more information.
+      Audio: {fileID: 0}
     - character:
         name: Player
         icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
       line: Thanks for the briefing, I will try my best to find out who is guilty.
+      Audio: {fileID: 0}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: Oh, before i forget it, I think that our cleaning woman Julia can also
         give you some information.
+      Audio: {fileID: 0}
     - character:
         name: Player
         icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
       line: I will try my best to finish the job. See you later.
+      Audio: {fileID: 0}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: See ya.
+      Audio: {fileID: 0}
   secondlDialogue:
     dialogueLines:
     - character:
@@ -1374,6 +1401,7 @@ MonoBehaviour:
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: Oh, dusty. I know that you are fast, but that's to fast. You will find
         me here after you finished your task.
+      Audio: {fileID: 0}
   thirdDialogue:
     dialogueLines: []
   guiltyDialogue:
@@ -1382,14 +1410,17 @@ MonoBehaviour:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: Did you find out who is responsible for the spilled wine?
+      Audio: {fileID: 0}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: And what about the ugly vomit?
+      Audio: {fileID: 0}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: Last but not least, who spilled glue on the floor?
+      Audio: {fileID: 0}
 --- !u!61 &626894724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13754,6 +13785,107 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5159381940372875278, guid: 4ae7d9a649de2834bb16c4919d8a7fb4, type: 3}
   m_PrefabInstance: {fileID: 1108490888}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1747233478 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2800690380588254195, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+  m_PrefabInstance: {fileID: 145027951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1747233483
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747233478}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1750394509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13851,6 +13983,7 @@ MonoBehaviour:
         name: Child
         icon: {fileID: 680118756, guid: da7f1d5d231cf574ea123b2a3d748e72, type: 3}
       line: FORTNITE FORTNITE FORTNITE
+      Audio: {fileID: 0}
   secondlDialogue:
     dialogueLines: []
   thirdDialogue:
@@ -14094,6 +14227,7 @@ MonoBehaviour:
         icon: {fileID: 585418526, guid: 2a14c8e066e8eed4c885ef6002c0ee22, type: 3}
       line: My son loves playing fortnite, it is good for me, so I can do my math
         stuff.
+      Audio: {fileID: 0}
   secondlDialogue:
     dialogueLines: []
   thirdDialogue:
@@ -14576,6 +14710,10 @@ PrefabInstance:
     - target: {fileID: 2034503197477145756, guid: 61ac66706162f924f8911d614ddc53f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570637554510517686, guid: 61ac66706162f924f8911d614ddc53f7, type: 3}
+      propertyPath: m_audioClip
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4638309811849757344, guid: 61ac66706162f924f8911d614ddc53f7, type: 3}
       propertyPath: m_Name

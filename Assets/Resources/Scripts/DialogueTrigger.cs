@@ -14,6 +14,7 @@ public class DialogueLine
 {
     public DialogueCharacter character;
     [TextArea(3, 10)] public string line;
+    public AudioClip Audio;
 }
 
 [System.Serializable]
@@ -29,8 +30,14 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue guiltyDialogue;
     private static bool firstDialoguePlayedMaid = false;
     private static bool allDirtRemoved = false;
+    private AudioSource audioSource;
     
     private static bool firstDialoguePlayedManager = false;
+
+    public void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void TriggerDialogue()
     {
@@ -41,20 +48,20 @@ public class DialogueTrigger : MonoBehaviour
         
         if (firstDialoguePlayedMaid && name == "Maid" && !allDirtRemoved)
         {
-            DialogueManager.Instance.StartDialogue(secondlDialogue);
+            DialogueManager.Instance.StartDialogue(secondlDialogue, audioSource);
         }
         else if (firstDialoguePlayedMaid && name == "Maid" && allDirtRemoved)
         {
-            DialogueManager.Instance.StartDialogue(thirdDialogue);
+            DialogueManager.Instance.StartDialogue(thirdDialogue, audioSource);
         }
         else if(firstDialoguePlayedManager && name == "Manager" && !allDirtRemoved)
         {
-            DialogueManager.Instance.StartDialogue(secondlDialogue);
+            DialogueManager.Instance.StartDialogue(secondlDialogue, audioSource);
         }
         else if (firstDialoguePlayedManager && name == "Manager" && allDirtRemoved)
         {
             Globals.showGuiltDialogue = true;
-            DialogueManager.Instance.StartDialogue(guiltyDialogue);
+            DialogueManager.Instance.StartDialogue(guiltyDialogue, audioSource);
         }
         else
         {
@@ -65,7 +72,7 @@ public class DialogueTrigger : MonoBehaviour
             {
                 firstDialoguePlayedManager = true;
             }
-            DialogueManager.Instance.StartDialogue(dialogue);
+            DialogueManager.Instance.StartDialogue(dialogue, audioSource);
         }
     }
 
