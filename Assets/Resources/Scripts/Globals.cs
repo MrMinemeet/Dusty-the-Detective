@@ -11,6 +11,15 @@ public static class Globals
 	// Times in seconds for guests range of leaving
 	public const int MIN_TIME_UNTIL_LEAVE = 10 * 60;
 	public const int MAX_TIME_UNTIL_LEAVE = 20 * 60;
+
+	// Variables to store whether a dirt spot is cleaned and disposed
+	public enum TrashStatus
+	{
+		ACTIVE, COLLECTED, DISPOSED
+	}
+	public static TrashStatus vomitStatus = TrashStatus.ACTIVE;
+	public static TrashStatus wineStatus = TrashStatus.ACTIVE;
+	public static TrashStatus glueStatus = TrashStatus.ACTIVE;
 	
 	//bools for correct assuming which npc was guilty, used by DialogueManager
 	public static bool vomitCorrect = false;

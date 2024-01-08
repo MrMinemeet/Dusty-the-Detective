@@ -140,7 +140,6 @@ GameObject:
   - component: {fileID: 109128515}
   - component: {fileID: 109128519}
   - component: {fileID: 109128514}
-  - component: {fileID: 109128518}
   - component: {fileID: 109128517}
   - component: {fileID: 109128520}
   - component: {fileID: 109128521}
@@ -266,31 +265,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &109128518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 109128513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb98a8cd4c318344b82ca92f245325ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    dialogueLines:
-    - character:
-        name: Trashcan
-        icon: {fileID: -1450725432, guid: bff65a43301cf5743aabc3c43bc6b57a, type: 3}
-      line: I love eating trash.
-      Audio: {fileID: 8300000, guid: cde2d5a3e8aacc14e9e41f2340f73cd9, type: 3}
-  secondlDialogue:
-    dialogueLines: []
-  thirdDialogue:
-    dialogueLines: []
-  guiltyDialogue:
-    dialogueLines: []
 --- !u!114 &109128519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,6 +277,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f62d65c90b488e40bacb8aa9ccf4421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  greetingDialogue:
+    dialogueLines:
+    - character:
+        name: Garbage Collector
+        icon: {fileID: 45901355, guid: bff65a43301cf5743aabc3c43bc6b57a, type: 3}
+      line: 'I am the Garbage Collector and I love reference counting and eating
+        trash. You can feed me with everything you clean up after those pesky guests. '
+      Audio: {fileID: 8300000, guid: bbf557009b4b100498e03fb839d03d05, type: 3}
+  hasGlueDialogue:
+    dialogueLines:
+    - character:
+        name: Garbage Collector
+        icon: {fileID: 45901355, guid: bff65a43301cf5743aabc3c43bc6b57a, type: 3}
+      line: Oh, you have some glue for me, I was hoping for that, I had a hole in
+        my belly anyway.
+      Audio: {fileID: 8300000, guid: bbf557009b4b100498e03fb839d03d05, type: 3}
+  hasVomitDialogue:
+    dialogueLines:
+    - character:
+        name: Garbage Collector
+        icon: {fileID: 45901355, guid: bff65a43301cf5743aabc3c43bc6b57a, type: 3}
+      line: Eww, when i told you, that I will gladly take anything, I didn't think
+        about some vomit.
+      Audio: {fileID: 8300000, guid: bbf557009b4b100498e03fb839d03d05, type: 3}
+  hasWineDialogue:
+    dialogueLines:
+    - character:
+        name: Garbage Collector
+        icon: {fileID: -1450725432, guid: bff65a43301cf5743aabc3c43bc6b57a, type: 3}
+      line: Finally, some good stuff, i haven't had some wine in years.
+      Audio: {fileID: 8300000, guid: bbf557009b4b100498e03fb839d03d05, type: 3}
+  allCollectedDialogue:
+    dialogueLines:
+    - character:
+        name: Garbage Collector
+        icon: {fileID: -1450725432, guid: bff65a43301cf5743aabc3c43bc6b57a, type: 3}
+      line: Oh i am so full, thanks for feeding me so well. I am sure the maid will
+        appreciate that. I bet she will tell you a few hints, who might be the guilty
+        people.
+      Audio: {fileID: 8300000, guid: bbf557009b4b100498e03fb839d03d05, type: 3}
 --- !u!82 &109128520
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15577,6 +15591,14 @@ PrefabInstance:
     - target: {fileID: 6743852514541926416, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224093390950548604, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 403.1156
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224093390950548604, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -166.02113
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
