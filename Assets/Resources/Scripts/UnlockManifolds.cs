@@ -18,7 +18,7 @@ public class UnlockManifolds : MonoBehaviour
 
    public void Update()
    {
-      if (Globals.LeftoverTrash == 2 && !played)
+      if (Globals.LeftoverTrash == 1 && !played)
       {
          played = true;
          animator.Play("show");
