@@ -19,4 +19,10 @@ public class MenuHandler : MonoBehaviour
         // Load main menu
         StartCoroutine(FindObjectOfType<LevelLoader>().LoadLevel("Controls"));
     }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quitting game...");
+        Application.Quit(); // Won't do anything in editor
+    }
 }
