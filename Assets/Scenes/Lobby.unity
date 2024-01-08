@@ -1359,7 +1359,7 @@ MonoBehaviour:
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
-      line: The second and thrid one checked in together. A father with his small
+      line: The second and third one checked in together. A father with his small
         son. I think that the father is a math teacher.
       Audio: {fileID: 8300000, guid: 78d4d946e52c7df48841cada0625c7df, type: 3}
     - character:
