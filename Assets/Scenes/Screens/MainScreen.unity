@@ -378,11 +378,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ba7fc0827dff6479157bf2b5249d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &614991033 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3421868933092367709, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
-  m_PrefabInstance: {fileID: 1807037530}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1245618756
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,6 +768,7 @@ PrefabInstance:
     - {fileID: 8139146744117793981, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
     - {fileID: 4326470112736022301, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
     - {fileID: 4179797735548450154, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
+    - {fileID: 7700453221065025371, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6743852514541926416, guid: 8a4fcc43c160e0d4f83351aebfbe0525, type: 3}
       insertIndex: -1
@@ -970,7 +966,7 @@ PrefabInstance:
     - target: {fileID: 8404946369756151092, guid: ed3743c47e87f484e89bd061db19c8fa, type: 3}
       propertyPath: _transition
       value: 
-      objectReference: {fileID: 614991033}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
