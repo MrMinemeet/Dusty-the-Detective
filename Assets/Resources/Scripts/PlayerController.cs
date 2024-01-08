@@ -3,10 +3,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 3f;
+    public float normalMoveSpeed = 3f;
+    
     public bool savePosition;
     public string gameManagerName;
 
+    private float _moveSpeed = 3f;
     private Vector2 _moveInput = Vector2.zero;
     private Rigidbody2D _rb;
     private Animator _a;
@@ -14,6 +16,10 @@ public class PlayerController : MonoBehaviour
 
     // Indicates if the player released the input at leased once since coming to the scene
     private bool _released;
+    
+    // Dash related variables
+    private float _dashTimer;
+    private bool _doesDash;
 
     // Start is called before the first frame update
     private void Start()
@@ -35,6 +41,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        // Reduce dash timer
+        if (_dashTimer > 0)
+            _dashTimer -= Time.deltaTime;
+        
         // Check if player is not moving, in order to mark input as released at least once
         if (!_released && _moveInput is { x: 0, y: 0 })
         {
@@ -49,13 +59,31 @@ public class PlayerController : MonoBehaviour
             _rb.velocity = Vector2.zero;
             return;
         }
-
-        // Only move if the player had released the input at least once
-        if (_released)
-            _rb.velocity = _moveInput * moveSpeed;
         
         if (savePosition)
             _gameManager.playerPosition = transform.position; 
+
+        // Only move if the player had released the input at least once
+        if (_released)
+            _rb.velocity = _moveInput * _moveSpeed;
+    }
+    
+    private void OnDash(InputValue value)
+    {
+        if (PauseMenu.IsGamePaused) return;
+        if (DialogueManager.IsDialogueActive) return;
+        if (_dashTimer > 0) return;
+        
+        // Double move speed for 1 second
+        _moveSpeed = normalMoveSpeed * 2f;
+        _dashTimer = 1f;
+        Invoke(nameof(StopDash), 0.5f);
+    }
+
+    private void StopDash()
+    {
+        // Reset move speed
+        _moveSpeed = normalMoveSpeed;
     }
 
     private void OnMove(InputValue value)
