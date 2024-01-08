@@ -266,7 +266,7 @@ Transform:
   m_GameObject: {fileID: 70070500}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6026266, y: -3.8703587, z: -10}
+  m_LocalPosition: {x: -1.6010015, y: -3.8703609, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1285,6 +1285,7 @@ MonoBehaviour:
         icon: {fileID: -1944158035, guid: 82a66581c7b2fd34c88353e3f8bb2665, type: 3}
       line: I cannot find them. I bought five extra tubes for tomorrow. I need to
         find them.
+      Audio: {fileID: 8300000, guid: cde2d5a3e8aacc14e9e41f2340f73cd9, type: 3}
   secondlDialogue:
     dialogueLines: []
   thirdDialogue:

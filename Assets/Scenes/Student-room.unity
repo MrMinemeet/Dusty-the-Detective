@@ -706,7 +706,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+      m_AllTileFlags: 1
   - first: {x: 3, y: -2, z: 0}
     second:
       serializedVersion: 2
@@ -736,7 +736,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+      m_AllTileFlags: 1
   - first: {x: 4, y: -2, z: 0}
     second:
       serializedVersion: 2
@@ -836,7 +836,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+      m_AllTileFlags: 1
   - first: {x: 3, y: -1, z: 0}
     second:
       serializedVersion: 2
@@ -856,7 +856,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+      m_AllTileFlags: 1
   - first: {x: 4, y: -1, z: 0}
     second:
       serializedVersion: 2
@@ -1069,51 +1069,12 @@ CompositeCollider2D:
         Y: 31250000
       - X: -3437500
         Y: 31250000
-    - - X: 30000000
-        Y: -12187500
-      - X: 30000000
-        Y: -3750000
-      - X: 20000000
-        Y: -3750000
-      - X: 20000000
-        Y: -13437500
-      - X: 28125000
-        Y: -13437500
-    - - X: 39375000
-        Y: -12812500
-      - X: 39375000
-        Y: -4375000
-      - X: 38750000
-        Y: -3750000
-      - X: 31562500
-        Y: -3750000
-      - X: 30937500
-        Y: -4375000
-      - X: 30937500
-        Y: -12812500
-      - X: 31562500
-        Y: -13437500
-      - X: 38750000
-        Y: -13437500
   m_CompositePaths:
     m_Paths:
     - - {x: -0.34377602, y: 3.125}
       - {x: -0.312533, y: 3.4375}
       - {x: -0.7187468, y: 3.4374673}
       - {x: -0.687474, y: 3.125}
-    - - {x: 3.8749893, y: -1.34375}
-      - {x: 3.9375, y: -1.2812393}
-      - {x: 3.9374924, y: -0.4374924}
-      - {x: 3.8749893, y: -0.375}
-      - {x: 3.1562424, y: -0.3750076}
-      - {x: 3.09375, y: -0.43751082}
-      - {x: 3.0937576, y: -1.2812576}
-      - {x: 3.1562607, y: -1.34375}
-    - - {x: 2.8124921, y: -1.34375}
-      - {x: 3, y: -1.2187357}
-      - {x: 2.999971, y: -0.375}
-      - {x: 2, y: -0.3750293}
-      - {x: 2.0000293, y: -1.34375}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -1275,6 +1236,7 @@ MonoBehaviour:
         name: Student
         icon: {fileID: -341927286, guid: cc0429840ed12ce44b286d168412ddd5, type: 3}
       line: I cannot wait for the next Mensafest.
+      Audio: {fileID: 8300000, guid: 3101ac3956e05234e8c65fe6d8d7435d, type: 3}
   secondlDialogue:
     dialogueLines: []
   thirdDialogue:
@@ -5083,7 +5045,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+      m_AllTileFlags: 1
   - first: {x: 3, y: -1, z: 0}
     second:
       serializedVersion: 2
@@ -5103,7 +5065,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+      m_AllTileFlags: 1
   - first: {x: 4, y: -1, z: 0}
     second:
       serializedVersion: 2
@@ -5225,39 +5187,9 @@ CompositeCollider2D:
   m_EdgeRadius: 0
   m_ColliderPaths:
   - m_Collider: {fileID: 1546645354}
-    m_ColliderPaths:
-    - - X: 30000000
-        Y: -3750000
-      - X: 20000000
-        Y: -3750000
-      - X: 20000000
-        Y: -10000000
-      - X: 30000000
-        Y: -10000000
-    - - X: 39375000
-        Y: -4375000
-      - X: 38750000
-        Y: -3750000
-      - X: 31562500
-        Y: -3750000
-      - X: 30937500
-        Y: -4375000
-      - X: 30937500
-        Y: -10000000
-      - X: 39375000
-        Y: -10000000
+    m_ColliderPaths: []
   m_CompositePaths:
-    m_Paths:
-    - - {x: 3.937471, y: -1}
-      - {x: 3.9374924, y: -0.4374924}
-      - {x: 3.8749893, y: -0.375}
-      - {x: 3.1562424, y: -0.3750076}
-      - {x: 3.09375, y: -0.43751082}
-      - {x: 3.0937793, y: -1}
-    - - {x: 2.999971, y: -1}
-      - {x: 2.999971, y: -0.375}
-      - {x: 2, y: -0.3750293}
-      - {x: 2.0000293, y: -1}
+    m_Paths: []
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -5468,7 +5400,7 @@ Transform:
   m_GameObject: {fileID: 1588985572}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6155725, y: -3.830499, z: -10}
+  m_LocalPosition: {x: 1.6139474, y: -3.8304958, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

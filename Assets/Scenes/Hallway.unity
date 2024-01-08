@@ -493,7 +493,7 @@ MonoBehaviour:
         name: Player
         icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
       line: That's mean :(.
-      Audio: {fileID: 0}
+      Audio: {fileID: 8300000, guid: bbf557009b4b100498e03fb839d03d05, type: 3}
   secondlDialogue:
     dialogueLines:
     - character:
@@ -803,7 +803,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3323001, y: 9.373976, z: -10}
+  m_LocalPosition: {x: -1.3323003, y: 9.373968, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
