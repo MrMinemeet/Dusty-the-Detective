@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -30,7 +29,6 @@ public class DontPressTheButton : MonoBehaviour
 		else if (_runTimer)
 		{
 			_timeShown += Time.deltaTime;
-			
 
 			// Update time left
 			var timeLeft = _timeToWait - _timeShown;
@@ -44,6 +42,8 @@ public class DontPressTheButton : MonoBehaviour
 
 	private void LateUpdate()
 	{
+		if (!_runTimer) return;
+		
 		// Disable movement while minigame is active
 		_playerRigidbody2D.velocity = Vector2.zero;
 	
