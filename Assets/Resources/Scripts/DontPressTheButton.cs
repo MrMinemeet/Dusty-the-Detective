@@ -17,7 +17,7 @@ public class DontPressTheButton : MonoBehaviour
 	{
 		if (!_hasBeenPlayed && Globals.LeftoverTrash == 0)
 			StartMinigame();
-		else if (Globals.LeftoverTrash != 1 || !_hasBeenPlayed)
+		else if (Globals.LeftoverTrash != 0 || !_hasBeenPlayed)
 			return;
 
 
