@@ -8,29 +8,45 @@ public class DontPressTheButton : MonoBehaviour
 
 	public TextMeshProUGUI timeLeftText;
 	public Animator animator;
-	private bool _hasBeenPlayed;
-	private float _timeShown;
+	private static bool _hasBeenPlayed;
+	private static bool _runTimer;
+	private static float _timeShown;
+	private static float _timeToWait;
 
-	private float _timeToWait;
+	private Rigidbody2D _playerRigidbody2D;
+
+	private void Awake()
+	{
+		_playerRigidbody2D = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+	}
 
 	private void Update()
 	{
 		if (!_hasBeenPlayed && Globals.LeftoverTrash == 0)
+		{
+			// Not played yet, and no trash left -> start
 			StartMinigame();
-		else if (Globals.LeftoverTrash != 0 || !_hasBeenPlayed)
-			return;
+		}
+		else if (_runTimer)
+		{
+			_timeShown += Time.deltaTime;
+			
 
+			// Update time left
+			var timeLeft = _timeToWait - _timeShown;
+			timeLeftText.text = $"{timeLeft:F1} seconds left";
 
-		_timeShown += Time.deltaTime;
+			if (_timeShown >= _timeToWait)
+				// Trigger successful cleaning
+				Disable();
+		}
+	}
 
-		// Update time left
-		var timeLeft = _timeToWait - _timeShown;
-		timeLeftText.text = $"{timeLeft:F1} seconds left";
-
-
-		if (_timeShown >= _timeToWait)
-			// Trigger successful cleaning
-			Disable();
+	private void LateUpdate()
+	{
+		// Disable movement while minigame is active
+		_playerRigidbody2D.velocity = Vector2.zero;
+	
 	}
 
 	public void OnPressed()
@@ -50,6 +66,7 @@ public class DontPressTheButton : MonoBehaviour
 	{
 		Debug.Log("Disabling DontPressTheButton minigame");
 		animator.Play("hide");
+		_runTimer = false;
 		Destroy(this);
 	}
 
@@ -59,5 +76,6 @@ public class DontPressTheButton : MonoBehaviour
 		animator.Play("show");
 		_timeToWait = DEFAULT_TIME_TO_WAIT;
 		_hasBeenPlayed = true;
+		_runTimer = true;
 	}
 }
