@@ -395,6 +395,12 @@ MonoBehaviour:
         back after you have found all three spots and removed them.
       Audio: {fileID: 8300000, guid: 3101ac3956e05234e8c65fe6d8d7435d, type: 3}
     - character:
+        name: Maid
+        icon: {fileID: 2131280070, guid: 8de5803d76be11d46b17b62094469957, type: 3}
+      line: Also, it is important that you bring the trash, to the trashcan in the
+        first floor. It's the only trash can i can trust.
+      Audio: {fileID: 8300000, guid: bbf557009b4b100498e03fb839d03d05, type: 3}
+    - character:
         name: Player
         icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
       line: That's mean :(.
