@@ -47,7 +47,7 @@ public class DirtSpotDistributor : MonoBehaviour
 
 	[SerializeField] public GameObject grid;
 	private string _currentFloor;
-	private readonly List<TilemapCollider2D> _tilemapCollider2Ds = new();
+	private readonly List<Collider2D> _collider2Ds = new();
 	private readonly List<Tilemap> _tilemaps = new();
 
 	private void Awake()
@@ -61,15 +61,13 @@ public class DirtSpotDistributor : MonoBehaviour
 		foreach (GameObject obj in children)
 		{
 			Tilemap tileMap = obj.GetComponent<Tilemap>();
-			if (tileMap != null)
-			{
-				TilemapCollider2D tc2d = tileMap.GetComponent<TilemapCollider2D>();
-				if (tc2d != null)
-				{
-					_tilemaps.Add(tileMap);
-					_tilemapCollider2Ds.Add(tc2d);
-				}
-			}
+			if (tileMap == null) continue; // no tilemap found
+			
+			CompositeCollider2D c2d = tileMap.GetComponent<CompositeCollider2D>();
+			if (c2d == null) continue; // no CompositeCollider found
+			
+			_tilemaps.Add(tileMap);
+			_collider2Ds.Add(c2d);
 		}
 		_currentFloor = SceneManager.GetActiveScene().name;
 		Debug.Log("Current Floor: " + _currentFloor);
@@ -139,7 +137,7 @@ public class DirtSpotDistributor : MonoBehaviour
 						// The tile is on the "ignore" list
 						TilesToNotPlaceOn.Contains(tileAtPosition.name) ||
 						// The tile has a collider which the position overlaps with
-						_tilemapCollider2Ds.Any(c => c.bounds.Intersects(dirtSpotBounds))
+						_collider2Ds.Any(c => c.OverlapPoint(dirtSpot.transform.position))
 					);
 
 					// Store position
