@@ -22,6 +22,8 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
 
     private static int guiltCounter = 0;
+
+    public GameOverScreen GameOverScreen;
  
     private void Awake()
     {
@@ -143,6 +145,7 @@ public class DialogueManager : MonoBehaviour
         if (Globals.showGuiltDialogue)
         {
             animator.Play("outGuilt");
+            GameOverScreen.Setup(Globals.vomitCorrect, Globals.spilledWineCorrect, Globals.glueCorrect);
         }
         else
         {
