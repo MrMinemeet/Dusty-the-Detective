@@ -36,3 +36,4 @@ This repository holds the source code for the game "*Dusty the Detective*" for t
 * Walking_on_wood.wav from [Freesound](https://freesound.org/s/533044/) by Nox_Sound (first two steps extracted)
 * Walking_on_carpet.wav from [Freesound](https://freesound.org/s/543523/) by Shneak (cut to mimic steps of `Walking_on_wood.wav` in terms of timing)
 * Walking_on_tile.wav from [Freesound](https://freesound.org/s/689127/) by Pelouta (cut to mimic steps of `Walking_on_wood.wav` in terms of timing)
+* Pixel Style Keys from [Itch.io](https://dreammix.itch.io/keyboard-keys-for-ui) by Dream Mix
