@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TrashcanController : MonoBehaviour
@@ -62,19 +64,21 @@ public class TrashcanController : MonoBehaviour
             return;
         }
 
+        var combinedDialogue = new List<Dialogue>();
+
         if(Globals.glueStatus == Globals.TrashStatus.COLLECTED)
         {
-            DialogueManager.Instance.StartDialogue(hasGlueDialogue, audioSource);
+            combinedDialogue.Add(hasGlueDialogue);
             Globals.glueStatus = Globals.TrashStatus.DISPOSED;
         }
         if (Globals.vomitStatus == Globals.TrashStatus.COLLECTED)
         {
-            DialogueManager.Instance.StartDialogue(hasVomitDialogue, audioSource);
+            combinedDialogue.Add(hasVomitDialogue);
             Globals.vomitStatus = Globals.TrashStatus.DISPOSED;
         }
         if (Globals.wineStatus == Globals.TrashStatus.COLLECTED)
         {
-            DialogueManager.Instance.StartDialogue(hasWineDialogue, audioSource);
+            combinedDialogue.Add(hasWineDialogue);
             Globals.wineStatus = Globals.TrashStatus.DISPOSED;
         }
 
@@ -82,8 +86,11 @@ public class TrashcanController : MonoBehaviour
             Globals.vomitStatus == Globals.TrashStatus.DISPOSED &&
             Globals.wineStatus == Globals.TrashStatus.DISPOSED)
         {
-            DialogueManager.Instance.StartDialogue(allCollectedDialogue, audioSource);
-            return;
+            combinedDialogue.Add(allCollectedDialogue);
         }
+        DialogueManager.Instance.StartDialogue(new Dialogue() { 
+            dialogueLines = combinedDialogue
+            .SelectMany(dialogue => dialogue.dialogueLines)
+            .ToList() }, audioSource);
     }
 }
