@@ -1211,6 +1211,7 @@ MonoBehaviour:
         icon: {fileID: -2093319283, guid: 80dcfd558a397fa4bad251122b131ade, type: 3}
       line: Did you know that many artists are drinking wine, it seems like they
         gain extra creativity.
+      Audio: {fileID: 8300000, guid: 3101ac3956e05234e8c65fe6d8d7435d, type: 3}
   secondlDialogue:
     dialogueLines: []
   thirdDialogue:
@@ -14611,6 +14612,7 @@ MonoBehaviour:
         name: Cook
         icon: {fileID: 1775983546, guid: 88ac5468a0acbc54d811fe8c3081a43b, type: 3}
       line: I can not remember when was the last time a guest ordered to much wine.
+      Audio: {fileID: 8300000, guid: eb690dde8c5b04b43a413a2026c59418, type: 3}
   secondlDialogue:
     dialogueLines: []
   thirdDialogue:
@@ -15006,6 +15008,7 @@ MonoBehaviour:
         name: Janitor
         icon: {fileID: 1664149946, guid: 98a967a3319f5464cb19d80ff5a2e48d, type: 3}
       line: Julia is doing way to much here. She always has to clean the mess.
+      Audio: {fileID: 8300000, guid: bbf557009b4b100498e03fb839d03d05, type: 3}
   secondlDialogue:
     dialogueLines: []
   thirdDialogue:

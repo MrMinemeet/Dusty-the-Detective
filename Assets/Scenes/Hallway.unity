@@ -476,26 +476,31 @@ MonoBehaviour:
         name: Maid
         icon: {fileID: 2131280070, guid: 8de5803d76be11d46b17b62094469957, type: 3}
       line: Hey dusty, nice to see you again.
+      Audio: {fileID: 8300000, guid: fa606160c6a30554097e36db377c6e52, type: 3}
     - character:
         name: Player
         icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
       line: Nice to see you to Julia. Mr Manager said that you can give me some information
         about the new guests.
+      Audio: {fileID: 8300000, guid: cde2d5a3e8aacc14e9e41f2340f73cd9, type: 3}
     - character:
         name: Maid
         icon: {fileID: 2131280070, guid: 8de5803d76be11d46b17b62094469957, type: 3}
       line: Yes i can, but i wont until you help me cleaning the dirt away. So come
         back after you have found all three spots and removed them.
+      Audio: {fileID: 8300000, guid: 3101ac3956e05234e8c65fe6d8d7435d, type: 3}
     - character:
         name: Player
         icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
       line: That's mean :(.
+      Audio: {fileID: 0}
   secondlDialogue:
     dialogueLines:
     - character:
         name: Maid
         icon: {fileID: 2131280070, guid: 8de5803d76be11d46b17b62094469957, type: 3}
       line: Talk to me when you have finished.
+      Audio: {fileID: 8300000, guid: cde2d5a3e8aacc14e9e41f2340f73cd9, type: 3}
   thirdDialogue:
     dialogueLines:
     - character:
@@ -505,25 +510,30 @@ MonoBehaviour:
 
         So here are my three
         hints.'
+      Audio: {fileID: 8300000, guid: 78d4d946e52c7df48841cada0625c7df, type: 3}
     - character:
         name: Maid
         icon: {fileID: 2131280070, guid: 8de5803d76be11d46b17b62094469957, type: 3}
       line: 1. The guy with the red bottle in his room seems to be a student. On
         every thursday he is leaving early. Sometimes he comes back very late, at
         about midnight, unable to walk straight.
+      Audio: {fileID: 8300000, guid: fa606160c6a30554097e36db377c6e52, type: 3}
     - character:
         name: Maid
         icon: {fileID: 2131280070, guid: 8de5803d76be11d46b17b62094469957, type: 3}
       line: Sometimes he comes back very late, at about midnight, unable to walk
         straight.
+      Audio: {fileID: 8300000, guid: 92d03744e50d7e549bc8a324934d08a8, type: 3}
     - character:
         name: Maid
         icon: {fileID: 2131280070, guid: 8de5803d76be11d46b17b62094469957, type: 3}
       line: 2. The math teacher often says during dinner "Zu vino sag ich nie no".
+      Audio: {fileID: 8300000, guid: a53045cbdda1db74b8834d2786f4875a, type: 3}
     - character:
         name: Maid
         icon: {fileID: 2131280070, guid: 8de5803d76be11d46b17b62094469957, type: 3}
       line: 3. glue = coming to late to work.
+      Audio: {fileID: 8300000, guid: cde2d5a3e8aacc14e9e41f2340f73cd9, type: 3}
   guiltyDialogue:
     dialogueLines: []
 --- !u!61 &329821760
@@ -794,7 +804,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3322998, y: 9.373984, z: -10}
+  m_LocalPosition: {x: -1.3323003, y: 9.373968, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

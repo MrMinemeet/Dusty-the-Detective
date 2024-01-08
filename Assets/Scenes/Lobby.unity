@@ -1338,62 +1338,62 @@ MonoBehaviour:
       line: "Hey Dusty! I am sorry for calling you again, but as it looks like we
         are again facing with guest who are felling like they \r\ncould do what they
         want."
-      Audio: {fileID: 0}
+      Audio: {fileID: 8300000, guid: fa606160c6a30554097e36db377c6e52, type: 3}
     - character:
         name: Player
         icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
       line: Ok, I understand. What kind of guests are it this time?
-      Audio: {fileID: 0}
+      Audio: {fileID: 8300000, guid: 3101ac3956e05234e8c65fe6d8d7435d, type: 3}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: Two days ago five new guests have checked in, it seems like some of them
         are responsible for the dirt.
-      Audio: {fileID: 0}
+      Audio: {fileID: 8300000, guid: 92d03744e50d7e549bc8a324934d08a8, type: 3}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: The first looks like a climate activist, I mean he even doesn't have
         any clothes on, beside a small leave which is covering his *****.
-      Audio: {fileID: 0}
+      Audio: {fileID: 8300000, guid: 92d03744e50d7e549bc8a324934d08a8, type: 3}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: The second and thrid one checked in together. A father with his small
         son. I think that the father is a math teacher.
-      Audio: {fileID: 0}
+      Audio: {fileID: 8300000, guid: 78d4d946e52c7df48841cada0625c7df, type: 3}
     - character:
         name: Player
         icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
       line: If he is a math teacher, then we are no friends, i hate math.
-      Audio: {fileID: 0}
+      Audio: {fileID: 8300000, guid: 3101ac3956e05234e8c65fe6d8d7435d, type: 3}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: Regarding the last two, i cannot say much about them, they appear like
         normal people. Maybe you can talk with them, to get more information.
-      Audio: {fileID: 0}
+      Audio: {fileID: 8300000, guid: fa606160c6a30554097e36db377c6e52, type: 3}
     - character:
         name: Player
         icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
       line: Thanks for the briefing, I will try my best to find out who is guilty.
-      Audio: {fileID: 0}
+      Audio: {fileID: 8300000, guid: 3101ac3956e05234e8c65fe6d8d7435d, type: 3}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: Oh, before i forget it, I think that our cleaning woman Julia can also
         give you some information.
-      Audio: {fileID: 0}
+      Audio: {fileID: 8300000, guid: 92d03744e50d7e549bc8a324934d08a8, type: 3}
     - character:
         name: Player
         icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
       line: I will try my best to finish the job. See you later.
-      Audio: {fileID: 0}
+      Audio: {fileID: 8300000, guid: 3101ac3956e05234e8c65fe6d8d7435d, type: 3}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: See ya.
-      Audio: {fileID: 0}
+      Audio: {fileID: 8300000, guid: 92d03744e50d7e549bc8a324934d08a8, type: 3}
   secondlDialogue:
     dialogueLines:
     - character:
@@ -1401,7 +1401,7 @@ MonoBehaviour:
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: Oh, dusty. I know that you are fast, but that's to fast. You will find
         me here after you finished your task.
-      Audio: {fileID: 0}
+      Audio: {fileID: 8300000, guid: fa606160c6a30554097e36db377c6e52, type: 3}
   thirdDialogue:
     dialogueLines: []
   guiltyDialogue:
@@ -1410,17 +1410,17 @@ MonoBehaviour:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: Did you find out who is responsible for the spilled wine?
-      Audio: {fileID: 0}
+      Audio: {fileID: 8300000, guid: 92d03744e50d7e549bc8a324934d08a8, type: 3}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: And what about the ugly vomit?
-      Audio: {fileID: 0}
+      Audio: {fileID: 8300000, guid: 78d4d946e52c7df48841cada0625c7df, type: 3}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
       line: Last but not least, who spilled glue on the floor?
-      Audio: {fileID: 0}
+      Audio: {fileID: 8300000, guid: fa606160c6a30554097e36db377c6e52, type: 3}
 --- !u!61 &626894724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13983,7 +13983,7 @@ MonoBehaviour:
         name: Child
         icon: {fileID: 680118756, guid: da7f1d5d231cf574ea123b2a3d748e72, type: 3}
       line: FORTNITE FORTNITE FORTNITE
-      Audio: {fileID: 0}
+      Audio: {fileID: 8300000, guid: a064d1fa59761f94cb9ed8e375ef3787, type: 3}
   secondlDialogue:
     dialogueLines: []
   thirdDialogue:
@@ -14227,7 +14227,7 @@ MonoBehaviour:
         icon: {fileID: 585418526, guid: 2a14c8e066e8eed4c885ef6002c0ee22, type: 3}
       line: My son loves playing fortnite, it is good for me, so I can do my math
         stuff.
-      Audio: {fileID: 0}
+      Audio: {fileID: 8300000, guid: eb690dde8c5b04b43a413a2026c59418, type: 3}
   secondlDialogue:
     dialogueLines: []
   thirdDialogue:
