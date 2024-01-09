@@ -36,9 +36,9 @@ public class CleaningTask : MonoBehaviour
         Debug.Log(trash.Image.name);
 		switch(trash.Image.name)
 		{
-			case "dirt_spot_wine": Globals.wineStatus = Globals.TrashStatus.COLLECTED; break;
-			case "dirt_spot_vomit": Globals.vomitStatus = Globals.TrashStatus.COLLECTED; break;
-			case "dirt_spot_glue": Globals.glueStatus = Globals.TrashStatus.COLLECTED; break;
+			case "dirt_spot_wine": Globals.wineStatus = TrashStatus.COLLECTED; break;
+			case "dirt_spot_vomit": Globals.vomitStatus = TrashStatus.COLLECTED; break;
+			case "dirt_spot_glue": Globals.glueStatus = TrashStatus.COLLECTED; break;
 		}
 
         Globals.trashMap[Globals.CurrentFloorName].Remove(trash);
