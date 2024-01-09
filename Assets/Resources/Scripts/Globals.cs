@@ -11,25 +11,29 @@ public static class Globals
 	// Times in seconds for guests range of leaving
 	public const int MIN_TIME_UNTIL_LEAVE = 10 * 60;
 	public const int MAX_TIME_UNTIL_LEAVE = 20 * 60;
-
-	// Variables to store whether a dirt spot is cleaned and disposed
-	public enum TrashStatus
-	{
-		ACTIVE, COLLECTED, DISPOSED
-	}
-	public static TrashStatus vomitStatus = TrashStatus.ACTIVE;
-	public static TrashStatus wineStatus = TrashStatus.ACTIVE;
-	public static TrashStatus glueStatus = TrashStatus.ACTIVE;
+	private const int MAX_TRASH_PER_FLOOR = 1;
+	
+	public static TrashStatus vomitStatus;
+	public static TrashStatus wineStatus;
+	public static TrashStatus glueStatus;
 	
 	//bools for correct assuming which npc was guilty, used by DialogueManager
-	public static bool vomitCorrect = false;
-	public static bool spilledWineCorrect = false;
-	public static bool glueCorrect = false;
+	public static bool vomitCorrect;
+	public static bool spilledWineCorrect;
+	public static bool glueCorrect;
 	//bool for animating the correct guilt dialogue
-	public static bool showGuiltDialogue = false;
+	public static bool showGuiltDialogue;
 
 	// Total time in seconds of the game running
-	public static double TotalTimeRunning = 0;
+	public static double TotalTimeRunning;
+
+	/**
+	 * Provides the amount of trash left in total
+	 */
+	public static int LeftoverTrash => trashMap.Values.SelectMany(trash => trash).Count();
+	public static int CurrentFloor => Floors.IndexOf(CurrentFloorName);
+	public static string CurrentFloorName => SceneManager.GetActiveScene().name;
+	
 
 	public static readonly Dictionary<string, float> TimeUntilGuestLeaves = new()
 	{
@@ -50,10 +54,7 @@ public static class Globals
 		{ "Teacher", true }
 	};
 
-	private const int MAX_TRASH_PER_FLOOR = 1;
 	private static readonly string[] TrashToUse = { "wine", "glue", "vomit" };
-	public static int CurrentFloor => Floors.IndexOf(CurrentFloorName);
-	public static string CurrentFloorName => SceneManager.GetActiveScene().name;
 
 	public static readonly ReadOnlyCollection<string> Floors = new List<string>
 	{
@@ -94,11 +95,30 @@ public static class Globals
 		}
 		#endregion
 	}
+	
+	public static void ResetGlobals()
+	{
+		// Trash status
+		vomitStatus = TrashStatus.ACTIVE;
+		wineStatus = TrashStatus.ACTIVE;
+		glueStatus = TrashStatus.ACTIVE;
+		
+		// Flags
+		vomitCorrect = false;
+		spilledWineCorrect = false;
+		glueCorrect = false;
+		showGuiltDialogue = false;
+		
+		// Other values
+		TotalTimeRunning = 0f;
 
-	/**
-	 * Provides the amount of trash left in total
-	 */
-	public static int LeftoverTrash => trashMap.Values.SelectMany(trash => trash).Count();
+		foreach (string key in ActiveGuestMap.Keys)
+			ActiveGuestMap[key] = true;
+		
+		// Reset trash map
+		trashMap.Clear();
+		Initialize();
+	}
 }
 
 public record Trash
@@ -111,4 +131,11 @@ public record Trash
 		Position = position;
 		Image = image;
 	}
+}
+
+
+// Variables to store whether a dirt spot is cleaned and disposed
+public enum TrashStatus
+{
+	ACTIVE, COLLECTED, DISPOSED
 }
