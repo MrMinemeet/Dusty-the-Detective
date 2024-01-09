@@ -112,11 +112,13 @@ public static class Globals
 		// Other values
 		TotalTimeRunning = 0f;
 
-		foreach (string key in ActiveGuestMap.Keys)
+		ReadOnlyCollection<string> keys = ActiveGuestMap.Keys.ToList().AsReadOnly();
+		foreach (string key in keys)
 			ActiveGuestMap[key] = true;
 		
 		// Reset trash map
 		trashMap.Clear();
+		
 		Initialize();
 	}
 }
