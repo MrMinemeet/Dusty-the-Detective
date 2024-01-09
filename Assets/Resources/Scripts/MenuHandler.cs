@@ -5,7 +5,8 @@ public class MenuHandler : MonoBehaviour
     public void PlayGame()
     {
         // Reset globals
-        Globals.ResetGlobals();
+        // FIXME: This causes some issues
+        //Globals.ResetGlobals();
         
         // Load main menu
         StartCoroutine(FindObjectOfType<LevelLoader>().LoadLevel("Lobby"));
