@@ -36,7 +36,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue, AudioSource audioSource)
     {
         IsDialogueActive = true;
-        if (Globals.showGuiltDialogue)
+        if (Globals.ShowGuiltDialogue)
         {
             animator.Play("inGuilt");
         }
@@ -84,21 +84,21 @@ public class DialogueManager : MonoBehaviour
         {
             if (name == "Teacher")
             {
-                Globals.spilledWineCorrect = true;
+                Globals.SpilledWineCorrect = true;
             }
             guiltCounter = 1;
         } else if (guiltCounter == 1)
         {
             if (name == "Student")
             {
-                Globals.vomitCorrect = true;
+                Globals.VomitCorrect = true;
             }
             guiltCounter = 2;
         } else if (guiltCounter == 2)
         {
             if (name == "Activist")
             {
-                Globals.glueCorrect = true;
+                Globals.GlueCorrect = true;
             }
         }
         DisplayNextDialogueLine(audioSource);
@@ -142,10 +142,10 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         IsDialogueActive = false;
-        if (Globals.showGuiltDialogue)
+        if (Globals.ShowGuiltDialogue)
         {
             animator.Play("outGuilt");
-            GameOverScreen.Setup(Globals.vomitCorrect, Globals.spilledWineCorrect, Globals.glueCorrect);
+            GameOverScreen.Setup(Globals.VomitCorrect, Globals.SpilledWineCorrect, Globals.GlueCorrect);
         }
         else
         {

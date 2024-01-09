@@ -23,7 +23,7 @@ public class DirtspotPointer : MonoBehaviour
     private void Start()
     {
         // Don't continue if there are no dirt spots on the current floor
-        if (!Globals.trashMap.ContainsKey(SceneManager.GetActiveScene().name))
+        if (!Globals.TrashMap.ContainsKey(SceneManager.GetActiveScene().name))
         {
             // Disable script
             this.enabled = false;
@@ -31,7 +31,7 @@ public class DirtspotPointer : MonoBehaviour
         }
 
         // Create arrows for dirt spots of current floor
-        foreach(Trash t in Globals.trashMap[SceneManager.GetActiveScene().name]){
+        foreach(Trash t in Globals.TrashMap[SceneManager.GetActiveScene().name]){
             Vector3 targetPos = t.Position;
             GameObject pointer = Instantiate(Resources.Load<GameObject>("Prefabs/UI/Pointer"), transform);
             pointer.name = "Pointer_" + targetPos;

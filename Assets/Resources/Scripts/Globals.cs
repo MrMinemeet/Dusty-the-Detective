@@ -13,16 +13,18 @@ public static class Globals
 	public const int MAX_TIME_UNTIL_LEAVE = 20 * 60;
 	private const int MAX_TRASH_PER_FLOOR = 1;
 	
-	public static TrashStatus vomitStatus;
-	public static TrashStatus wineStatus;
-	public static TrashStatus glueStatus;
+	// States of trash
+	private static readonly string[] TrashToUse = { "wine", "glue", "vomit" };
+	public static TrashStatus VomitStatus;
+	public static TrashStatus WineStatus;
+	public static TrashStatus GlueStatus;
 	
-	//bools for correct assuming which npc was guilty, used by DialogueManager
-	public static bool vomitCorrect;
-	public static bool spilledWineCorrect;
-	public static bool glueCorrect;
-	//bool for animating the correct guilt dialogue
-	public static bool showGuiltDialogue;
+	// Flags for correct assuming which npc was guilty, used by DialogueManager
+	public static bool VomitCorrect;
+	public static bool SpilledWineCorrect;
+	public static bool GlueCorrect;
+	// Flags for animating the correct guilt dialogue
+	public static bool ShowGuiltDialogue;
 
 	// Total time in seconds of the game running
 	public static double TotalTimeRunning;
@@ -30,11 +32,21 @@ public static class Globals
 	/**
 	 * Provides the amount of trash left in total
 	 */
-	public static int LeftoverTrash => trashMap.Values.SelectMany(trash => trash).Count();
+	public static int LeftoverTrash => TrashMap.Values.SelectMany(trash => trash).Count();
+	
+	/**
+	 * Provides the index of the current floor in the <see cref="Floors"/> list
+	 */
 	public static int CurrentFloor => Floors.IndexOf(CurrentFloorName);
+	
+	/**
+	 * Provides the name of the current floor
+	 */
 	public static string CurrentFloorName => SceneManager.GetActiveScene().name;
 	
-
+	/**
+	 * Provides the time in seconds when a guest leaves the hotel
+	 */
 	public static readonly Dictionary<string, float> TimeUntilGuestLeaves = new()
 	{
 		{ "Activist", Random.Range(MIN_TIME_UNTIL_LEAVE, MAX_TIME_UNTIL_LEAVE) },
@@ -54,8 +66,9 @@ public static class Globals
 		{ "Teacher", true }
 	};
 
-	private static readonly string[] TrashToUse = { "wine", "glue", "vomit" };
-
+	/**
+	 * List of all floors (not guest rooms!) in the hotel
+	 */
 	public static readonly ReadOnlyCollection<string> Floors = new List<string>
 	{
 		"Lobby",
@@ -63,7 +76,7 @@ public static class Globals
 		"Restaurant",
 	}.AsReadOnly();
 
-	public static readonly Dictionary<String, List<Trash>> trashMap = new();
+	public static readonly Dictionary<String, List<Trash>> TrashMap = new();
 
 	// This method is called at the start of the program, before the first scene is loaded.
 	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -91,23 +104,26 @@ public static class Globals
 			{
 				trashList.Add(new Trash(Vector3.negativeInfinity, sprites[trashCounter++]));
 			}
-			trashMap.Add(floor, trashList);
+			TrashMap.Add(floor, trashList);
 		}
 		#endregion
 	}
 	
+	/**
+	 * Sets/Resets all global variables to their default values
+	 */
 	public static void ResetGlobals()
 	{
 		// Trash status
-		vomitStatus = TrashStatus.ACTIVE;
-		wineStatus = TrashStatus.ACTIVE;
-		glueStatus = TrashStatus.ACTIVE;
+		VomitStatus = TrashStatus.ACTIVE;
+		WineStatus = TrashStatus.ACTIVE;
+		GlueStatus = TrashStatus.ACTIVE;
 		
 		// Flags
-		vomitCorrect = false;
-		spilledWineCorrect = false;
-		glueCorrect = false;
-		showGuiltDialogue = false;
+		VomitCorrect = false;
+		SpilledWineCorrect = false;
+		GlueCorrect = false;
+		ShowGuiltDialogue = false;
 		
 		// Other values
 		TotalTimeRunning = 0f;
@@ -117,8 +133,7 @@ public static class Globals
 			ActiveGuestMap[key] = true;
 		
 		// Reset trash map
-		trashMap.Clear();
-		
+		TrashMap.Clear();
 		Initialize();
 	}
 }
@@ -135,8 +150,9 @@ public record Trash
 	}
 }
 
-
-// Variables to store whether a dirt spot is cleaned and disposed
+/*
+ * Variables to store whether a dirt spot is cleaned and disposed
+ */
 public enum TrashStatus
 {
 	ACTIVE, COLLECTED, DISPOSED
