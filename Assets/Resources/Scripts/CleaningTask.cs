@@ -32,16 +32,16 @@ public class CleaningTask : MonoBehaviour
 		Debug.Log("Player cleaned spot '" + gameObject.name + "'");
 		onCleaned.Invoke();
 
-        Trash trash = Globals.trashMap[Globals.CurrentFloorName].Find(t => t.Position == this.transform.position);
+        Trash trash = Globals.TrashMap[Globals.CurrentFloorName].Find(t => t.Position == this.transform.position);
         Debug.Log(trash.Image.name);
 		switch(trash.Image.name)
 		{
-			case "dirt_spot_wine": Globals.wineStatus = Globals.TrashStatus.COLLECTED; break;
-			case "dirt_spot_vomit": Globals.vomitStatus = Globals.TrashStatus.COLLECTED; break;
-			case "dirt_spot_glue": Globals.glueStatus = Globals.TrashStatus.COLLECTED; break;
+			case "dirt_spot_wine": Globals.WineStatus = TrashStatus.COLLECTED; break;
+			case "dirt_spot_vomit": Globals.VomitStatus = TrashStatus.COLLECTED; break;
+			case "dirt_spot_glue": Globals.GlueStatus = TrashStatus.COLLECTED; break;
 		}
 
-        Globals.trashMap[Globals.CurrentFloorName].Remove(trash);
+        Globals.TrashMap[Globals.CurrentFloorName].Remove(trash);
 
 		Destroy(gameObject);
 	}

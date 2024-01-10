@@ -75,7 +75,7 @@ public class DirtSpotDistributor : MonoBehaviour
 
 		#region DirtPlacement
 
-		if (Globals.trashMap.TryGetValue(_currentFloor, out List<Trash> value))
+		if (Globals.TrashMap.TryGetValue(_currentFloor, out List<Trash> value))
 		{
 			Debug.Log("Placing Dirt Spots...");
 			GameObject dirtSpotResource = Resources.Load<GameObject>("Prefabs/Dirtspots/DirtSpot");

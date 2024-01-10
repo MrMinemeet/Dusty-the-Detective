@@ -60,7 +60,7 @@ public class DialogueTrigger : MonoBehaviour
         }
         else if (firstDialoguePlayedManager && name == "Manager" && allDirtRemoved)
         {
-            Globals.showGuiltDialogue = true;
+            Globals.ShowGuiltDialogue = true;
             DialogueManager.Instance.StartDialogue(guiltyDialogue, audioSource);
         }
         else
