@@ -21202,6 +21202,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: MainTileMapUnity_771
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 640
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0741c134211eb2b43bdcbbbdd5c95df5
+      internalID: 1978957352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainTileMapUnity_772
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 640
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b162108534f8ba94aa08c2de846911c7
+      internalID: -1300064314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -21960,6 +22002,8 @@ TextureImporter:
       MainTileMapUnity_769: -5750396277104491325
       MainTileMapUnity_77: 3758052144477061533
       MainTileMapUnity_770: -9114154803073594525
+      MainTileMapUnity_771: 1978957352
+      MainTileMapUnity_772: -1300064314
       MainTileMapUnity_78: 3730123077093251266
       MainTileMapUnity_79: 171677388583363187
       MainTileMapUnity_8: 6517592898172973537
