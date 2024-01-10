@@ -88,6 +88,7 @@ public class DirtSpotDistributor : MonoBehaviour
 				dirtSpot.name = $"DirtSpot_{t.Position}";
 				dirtSpot.transform.localScale = new Vector3(0.5f, 0.5f, 1);
 				dirtSpot.GetComponent<SpriteRenderer>().sprite = t.Image;
+				dirtSpot.GetComponent<SpriteRenderer>().sortingOrder = -1;
 
 
 				// If the dirt spot is null, place it in a random position
