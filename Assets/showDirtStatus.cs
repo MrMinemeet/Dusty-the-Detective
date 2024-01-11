@@ -18,7 +18,7 @@ public class showDirtStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch(Globals.vomitStatus) 
+        switch(Globals.VomitStatus) 
         {
             case TrashStatus.ACTIVE:
                 vomitImage = vomit.GetComponent<Image>();
@@ -34,7 +34,7 @@ public class showDirtStatus : MonoBehaviour
                 break;
         }
         
-        switch(Globals.glueStatus) 
+        switch(Globals.GlueStatus) 
         {
             case TrashStatus.ACTIVE:
                 glueImage = glue.GetComponent<Image>();
@@ -50,7 +50,7 @@ public class showDirtStatus : MonoBehaviour
                 break;
         }
         
-        switch(Globals.wineStatus) 
+        switch(Globals.WineStatus) 
         {
             case TrashStatus.ACTIVE:
                 wineImage = wine.GetComponent<Image>();
