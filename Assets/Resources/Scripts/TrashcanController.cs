@@ -48,17 +48,17 @@ public class TrashcanController : MonoBehaviour
 
     private void TriggerDialogue()
     {
-        if (Globals.glueStatus == TrashStatus.DISPOSED &&
-            Globals.vomitStatus == TrashStatus.DISPOSED &&
-            Globals.wineStatus == TrashStatus.DISPOSED)
+        if (Globals.GlueStatus == TrashStatus.DISPOSED &&
+            Globals.VomitStatus == TrashStatus.DISPOSED &&
+            Globals.WineStatus == TrashStatus.DISPOSED)
         {
             DialogueManager.Instance.StartDialogue(allCollectedDialogue, audioSource);
             return;
         }
 
-        if (Globals.glueStatus != TrashStatus.COLLECTED && 
-            Globals.vomitStatus != TrashStatus.COLLECTED && 
-            Globals.wineStatus != TrashStatus.COLLECTED)
+        if (Globals.GlueStatus != TrashStatus.COLLECTED && 
+            Globals.VomitStatus != TrashStatus.COLLECTED && 
+            Globals.WineStatus != TrashStatus.COLLECTED)
         {
             DialogueManager.Instance.StartDialogue(greetingDialogue, audioSource);
             return;
@@ -66,25 +66,25 @@ public class TrashcanController : MonoBehaviour
 
         var combinedDialogue = new List<Dialogue>();
 
-        if(Globals.glueStatus == TrashStatus.COLLECTED)
+        if(Globals.GlueStatus == TrashStatus.COLLECTED)
         {
             combinedDialogue.Add(hasGlueDialogue);
-            Globals.glueStatus = TrashStatus.DISPOSED;
+            Globals.GlueStatus = TrashStatus.DISPOSED;
         }
-        if (Globals.vomitStatus == TrashStatus.COLLECTED)
+        if (Globals.VomitStatus == TrashStatus.COLLECTED)
         {
             combinedDialogue.Add(hasVomitDialogue);
-            Globals.vomitStatus = TrashStatus.DISPOSED;
+            Globals.VomitStatus = TrashStatus.DISPOSED;
         }
-        if (Globals.wineStatus == TrashStatus.COLLECTED)
+        if (Globals.WineStatus == TrashStatus.COLLECTED)
         {
             combinedDialogue.Add(hasWineDialogue);
-            Globals.wineStatus = TrashStatus.DISPOSED;
+            Globals.WineStatus = TrashStatus.DISPOSED;
         }
 
-        if (Globals.glueStatus == TrashStatus.DISPOSED &&
-            Globals.vomitStatus == TrashStatus.DISPOSED &&
-            Globals.wineStatus == TrashStatus.DISPOSED)
+        if (Globals.GlueStatus == TrashStatus.DISPOSED &&
+            Globals.VomitStatus == TrashStatus.DISPOSED &&
+            Globals.WineStatus == TrashStatus.DISPOSED)
         {
             combinedDialogue.Add(allCollectedDialogue);
         }
