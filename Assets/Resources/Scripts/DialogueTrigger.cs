@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class DialogueCharacter
@@ -68,6 +69,8 @@ public class DialogueTrigger : MonoBehaviour
             if (name == "Maid")
             {
                 firstDialoguePlayedMaid = true;
+                Globals.allowDirtPlacement = true;
+
             } else if (name == "Manager")
             {
                 firstDialoguePlayedManager = true;

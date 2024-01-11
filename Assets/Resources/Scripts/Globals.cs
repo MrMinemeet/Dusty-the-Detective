@@ -8,6 +8,9 @@ using Random = UnityEngine.Random;
 
 public static class Globals
 {
+	// Bool for activating dirtspot placement after first dialogue with maid finished
+	public static bool allowDirtPlacement = false;
+	
 	// Times in seconds for guests range of leaving
 	public const int MIN_TIME_UNTIL_LEAVE = 10 * 60;
 	public const int MAX_TIME_UNTIL_LEAVE = 20 * 60;
