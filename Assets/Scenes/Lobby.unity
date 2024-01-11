@@ -1580,15 +1580,16 @@ MonoBehaviour:
         want."
       Audio: {fileID: 8300000, guid: fa606160c6a30554097e36db377c6e52, type: 3}
     - character:
-        name: Player
+        name: Dusty
         icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
       line: Ok, I understand. What kind of guests are it this time?
       Audio: {fileID: 8300000, guid: 3101ac3956e05234e8c65fe6d8d7435d, type: 3}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
-      line: Two days ago five new guests have checked in, it seems like some of them
-        are responsible for the dirt.
+      line: Two days ago five new guests have checked in, today our maid found three
+        dirt spots in our hotel. It seems that some of the guests are responsible
+        for it.
       Audio: {fileID: 8300000, guid: 92d03744e50d7e549bc8a324934d08a8, type: 3}
     - character:
         name: Manager
@@ -1603,7 +1604,7 @@ MonoBehaviour:
         son. I think that the father is a math teacher.
       Audio: {fileID: 8300000, guid: 78d4d946e52c7df48841cada0625c7df, type: 3}
     - character:
-        name: Player
+        name: Dusty
         icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
       line: If he is a math teacher, then we are no friends, i hate math.
       Audio: {fileID: 8300000, guid: 3101ac3956e05234e8c65fe6d8d7435d, type: 3}
@@ -1614,25 +1615,27 @@ MonoBehaviour:
         normal people. Maybe you can talk with them, to get more information.
       Audio: {fileID: 8300000, guid: fa606160c6a30554097e36db377c6e52, type: 3}
     - character:
-        name: Player
+        name: Dusty
         icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
-      line: Thanks for the briefing, I will try my best to find out who is guilty.
+      line: Thanks for the briefing, I will try my best to find out who is responsible
+        for the dirt spots.
       Audio: {fileID: 8300000, guid: 3101ac3956e05234e8c65fe6d8d7435d, type: 3}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
-      line: Oh, before i forget it, I think that our cleaning woman Julia can also
-        give you some information.
+      line: Our Maid is waiting in the second floor for you. She is going to tell
+        you what your next tasks are.
       Audio: {fileID: 8300000, guid: 92d03744e50d7e549bc8a324934d08a8, type: 3}
     - character:
-        name: Player
+        name: Dusty
         icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
-      line: I will try my best to finish the job. See you later.
+      line: I will try my best to finish the job.
       Audio: {fileID: 8300000, guid: 3101ac3956e05234e8c65fe6d8d7435d, type: 3}
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
-      line: See ya.
+      line: When you have finished your task, just come back to me and tell me who
+        you think is responsible for the dirt spots.
       Audio: {fileID: 8300000, guid: 92d03744e50d7e549bc8a324934d08a8, type: 3}
   secondlDialogue:
     dialogueLines:
