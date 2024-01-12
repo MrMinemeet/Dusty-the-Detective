@@ -24,6 +24,8 @@ public class Dialogue
 }
 public class DialogueTrigger : MonoBehaviour
 {
+    private bool enterDialogue = false;
+    
     public Dialogue dialogue;
     public Dialogue secondlDialogue;
     public Dialogue thirdDialogue;
@@ -37,6 +39,15 @@ public class DialogueTrigger : MonoBehaviour
     public void Start()
     {
         _audioSource = GetComponent<AudioSource>();
+    }
+
+    public void Update()
+    {
+        if (enterDialogue && Input.GetKeyDown(KeyCode.E))
+        {
+            enterDialogue = false;
+            TriggerDialogue();
+        }
     }
 
     private void TriggerDialogue()
@@ -83,7 +94,15 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            TriggerDialogue();
+            enterDialogue = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            enterDialogue = false;
         }
     }
 }
