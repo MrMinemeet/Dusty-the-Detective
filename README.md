@@ -38,3 +38,4 @@ This repository holds the source code for the game "*Dusty the Detective*" for t
 * Walking_on_tile.wav from [Freesound](https://freesound.org/s/689127/) by Pelouta (cut to mimic steps of `Walking_on_wood.wav` in terms of timing)
 * Pixel Style Keys from [Itch.io](https://dreammix.itch.io/keyboard-keys-for-ui) by Dream Mix
 * Emergency Button from [Pixilart](https://www.pixilart.com/draw/emergency-button-among-us-16b80ef2ed7fca4)
+* Pixel Font - Thaleah from [Unity Store](https://assetstore.unity.com/packages/2d/fonts/free-pixel-font-thaleah-140059) by Tiny Worlds
