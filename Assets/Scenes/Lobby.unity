@@ -1057,7 +1057,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.06717308}
+  m_Offset: {x: 0.00000014901161, y: -0.025197595}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1068,7 +1068,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.45434615}
+  m_Size: {x: 0.48686552, y: 0.5382971}
   m_EdgeRadius: 0
 --- !u!1 &449795961
 GameObject:
@@ -1709,7 +1709,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.047013015}
+  m_Offset: {x: -0.004756272, y: -0.010321364}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1720,7 +1720,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.41402602}
+  m_Size: {x: 0.505497, y: 0.48740938}
   m_EdgeRadius: 0
 --- !u!1001 &636045846
 PrefabInstance:
@@ -14345,7 +14345,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.06413813}
+  m_Offset: {x: -0.014894016, y: -0.031158894}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -14356,7 +14356,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.44827625}
+  m_Size: {x: 0.44411516, y: 0.5142347}
   m_EdgeRadius: 0
 --- !u!1001 &1870334707
 PrefabInstance:
@@ -14589,7 +14589,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.058975115}
+  m_Offset: {x: -0.0044758394, y: -0.016775578}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -14600,7 +14600,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.43795022}
+  m_Size: {x: 0.49007672, y: 0.5223493}
   m_EdgeRadius: 0
 --- !u!1001 &354926562496187736
 PrefabInstance:
