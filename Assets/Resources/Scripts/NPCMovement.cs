@@ -8,9 +8,9 @@ public class Movement : MonoBehaviour
 	private Rigidbody2D _rigidBody;
 	private Waypoint _targetWaypoint;
 	private float _currentlyWaitedTime;
-	private bool _isInConversation;
 	private bool _soundPlayed;
 	private AudioSource _audioSource;
+	private bool _playerInTrigger;
 
 	private void Awake()
 	{
@@ -51,7 +51,7 @@ public class Movement : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		if (_isInConversation)
+		if (_playerInTrigger && DialogueManager.IsDialogueActive)
 		{
 			// Stop moving and do nothing
 			_rigidBody.velocity = Vector2.zero;
@@ -91,6 +91,16 @@ public class Movement : MonoBehaviour
 		_rigidBody.velocity = (_targetWaypoint.Position - (Vector2)transform.position).normalized * _speed;
 	}
 
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.CompareTag("Player")) _playerInTrigger = true;
+	}
+
+	private void OnTriggerExit2D(Collider2D other)
+	{
+		if (other.CompareTag("Player")) _playerInTrigger = false;
+	}
+
 	/**
 	 * <summary> Get the next <see cref="Waypoint"/> in the path </summary>
 	 * <returns> The next waypoint in the path </returns>
@@ -105,11 +115,6 @@ public class Movement : MonoBehaviour
 			: _path[_path.IndexOf(_targetWaypoint) + 1];
 	}
 
-	private void OnTriggerStay2D(Collider2D other)
-	{
-		_isInConversation = other.CompareTag("Player") && DialogueManager.IsDialogueActive;
-	}
-	
 	/**
 	 * Plays the passed audio clip.
 	 * Playback is skipped if _audioSource is null, the audioClip is null, the audioSource is already playing or the volume is 0.
