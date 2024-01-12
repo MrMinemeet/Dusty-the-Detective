@@ -14,8 +14,8 @@ public static class Globals
 	public static bool IsMiniGameActive = false;
 	
 	// Times in seconds for guests range of leaving
-	public const int MIN_TIME_UNTIL_LEAVE = 10 * 60;
-	public const int MAX_TIME_UNTIL_LEAVE = 20 * 60;
+	public const int MIN_TIME_UNTIL_LEAVE = 15 * 60;
+	public const int MAX_TIME_UNTIL_LEAVE = 30 * 60;
 	private const int MAX_TRASH_PER_FLOOR = 1;
 	
 	// States of trash
