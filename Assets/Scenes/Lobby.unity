@@ -1588,9 +1588,9 @@ MonoBehaviour:
     - character:
         name: Manager
         icon: {fileID: 1848066076, guid: 08e4211b28f645b40937ccea7bb91a6e, type: 3}
-      line: "Hey Dusty! I am sorry for calling you again, but as it looks like we
-        are again facing with guest who are felling like they \r\ncould do what they
-        want."
+      line: Hey Dusty! I am sorry for calling you again, but as it looks like we
+        are again facing with guest who are felling like they could do what they
+        want.
       Audio: {fileID: 8300000, guid: fa606160c6a30554097e36db377c6e52, type: 3}
     - character:
         name: Dusty
