@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -104,7 +103,6 @@ public class DirtSpotDistributor : MonoBehaviour
 					b.extents = new Vector3(b.extents.x - 1.5f, b.extents.y - 1.5f, b.extents.z);
 
 					TileBase tileAtPosition;
-					Bounds dirtSpotBounds;
 					Tile.ColliderType tileColliderType = Tile.ColliderType.None;
 					// Find a position that is a tile and not
 					do
@@ -119,18 +117,14 @@ public class DirtSpotDistributor : MonoBehaviour
 
 						// Set position to the calculated position
 						dirtSpot.transform.position = position;
-						
-						// Get bounds of dirt spot
-						dirtSpotBounds = dirtSpot.GetComponent<BoxCollider2D>().bounds;
 
-						if (tileAtPosition != null)
-						{
-							TileData td = new TileData();
-							tileAtPosition.GetTileData(
-								new Vector3Int((int)position.x, (int)position.y, (int)position.x), _tilemaps[0],
-								ref td);
-							tileColliderType = td.colliderType;
-						}
+						if (tileAtPosition == null) continue;
+						
+						TileData td = new TileData();
+						tileAtPosition.GetTileData(
+							new Vector3Int((int)position.x, (int)position.y, (int)position.x), _tilemaps[0],
+							ref td);
+						tileColliderType = td.colliderType;
 					} while (
 						// Don't place dirt if there is no tile
 						tileAtPosition == null ||

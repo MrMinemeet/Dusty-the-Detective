@@ -1,16 +1,15 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-[System.Serializable]
+[Serializable]
 public class DialogueCharacter
 {
     public string name;
     public Sprite icon;
 }
 
-[System.Serializable]
+[Serializable]
 public class DialogueLine
 {
     public DialogueCharacter character;
@@ -18,10 +17,10 @@ public class DialogueLine
     public AudioClip Audio;
 }
 
-[System.Serializable]
+[Serializable]
 public class Dialogue
 {
-    public List<DialogueLine> dialogueLines = new List<DialogueLine>();
+    public List<DialogueLine> dialogueLines = new();
 }
 public class DialogueTrigger : MonoBehaviour
 {
@@ -29,59 +28,60 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue secondlDialogue;
     public Dialogue thirdDialogue;
     public Dialogue guiltyDialogue;
-    private static bool firstDialoguePlayedMaid = false;
-    private static bool allDirtRemoved = false;
-    private AudioSource audioSource;
-    
-    private static bool firstDialoguePlayedManager = false;
+    private static bool _firstDialoguePlayedMaid;
+    private static bool _allDirtRemoved;
+    private AudioSource _audioSource;
+
+    private static bool _firstDialoguePlayedManager;
 
     public void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
-    public void TriggerDialogue()
+    private void TriggerDialogue()
     {
         if (Globals.LeftoverTrash == 0)
         {
-            allDirtRemoved = true;
+            _allDirtRemoved = true;
         }
-        
-        if (firstDialoguePlayedMaid && name == "Maid" && !allDirtRemoved)
+
+        if (_firstDialoguePlayedMaid && name == "Maid" && !_allDirtRemoved)
         {
-            DialogueManager.Instance.StartDialogue(secondlDialogue, audioSource);
+            DialogueManager.Instance.StartDialogue(secondlDialogue, _audioSource);
         }
-        else if (firstDialoguePlayedMaid && name == "Maid" && allDirtRemoved)
+        else if (_firstDialoguePlayedMaid && name == "Maid" && _allDirtRemoved)
         {
-            DialogueManager.Instance.StartDialogue(thirdDialogue, audioSource);
+            DialogueManager.Instance.StartDialogue(thirdDialogue, _audioSource);
         }
-        else if(firstDialoguePlayedManager && name == "Manager" && !allDirtRemoved)
+        else if (_firstDialoguePlayedManager && name == "Manager" && !_allDirtRemoved)
         {
-            DialogueManager.Instance.StartDialogue(secondlDialogue, audioSource);
+            DialogueManager.Instance.StartDialogue(secondlDialogue, _audioSource);
         }
-        else if (firstDialoguePlayedManager && name == "Manager" && allDirtRemoved)
+        else if (_firstDialoguePlayedManager && name == "Manager" && _allDirtRemoved)
         {
             Globals.ShowGuiltDialogue = true;
-            DialogueManager.Instance.StartDialogue(guiltyDialogue, audioSource);
+            DialogueManager.Instance.StartDialogue(guiltyDialogue, _audioSource);
         }
         else
         {
             if (name == "Maid")
             {
-                firstDialoguePlayedMaid = true;
-                Globals.allowDirtPlacement = true;
+                _firstDialoguePlayedMaid = true;
+                Globals.AllowDirtPlacement = true;
 
             } else if (name == "Manager")
             {
-                firstDialoguePlayedManager = true;
+                _firstDialoguePlayedManager = true;
             }
-            DialogueManager.Instance.StartDialogue(dialogue, audioSource);
+
+            DialogueManager.Instance.StartDialogue(dialogue, _audioSource);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             TriggerDialogue();
         }

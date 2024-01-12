@@ -1,10 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
-using UnityEngine;
 using TMPro;
- 
+using UnityEngine;
+using UnityEngine.UI;
+
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
@@ -12,8 +11,8 @@ public class DialogueManager : MonoBehaviour
     public Image characterIcon;
     public TextMeshProUGUI characterName;
     public TextMeshProUGUI dialogueArea;
- 
-    private Queue<DialogueLine> lines;
+
+    private Queue<DialogueLine> _lines;
     
     public static bool IsDialogueActive { get; private set; }
  
@@ -21,7 +20,7 @@ public class DialogueManager : MonoBehaviour
  
     public Animator animator;
 
-    private static int guiltCounter = 0;
+    private static int _guiltCounter;
 
     public GameOverScreen GameOverScreen;
  
@@ -29,28 +28,20 @@ public class DialogueManager : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
- 
-        lines = new Queue<DialogueLine>();
+
+        _lines = new Queue<DialogueLine>();
     }
 
     public void StartDialogue(Dialogue dialogue, AudioSource audioSource)
     {
         IsDialogueActive = true;
-        if (Globals.ShowGuiltDialogue)
-        {
-            animator.Play("inGuilt");
-        }
-        else
-        {
-            animator.Play("in");
-        }
-        
- 
-        lines.Clear();
+        animator.Play(Globals.ShowGuiltDialogue ? "inGuilt" : "in");
+
+        _lines.Clear();
  
         foreach (DialogueLine dialogueLine in dialogue.dialogueLines)
         {
-            lines.Enqueue(dialogueLine);
+            _lines.Enqueue(dialogueLine);
         }
  
         DisplayNextDialogueLine(audioSource);
@@ -58,13 +49,13 @@ public class DialogueManager : MonoBehaviour
  
     public void DisplayNextDialogueLine(AudioSource audioSource)
     {
-        if (lines.Count == 0)
+        if (_lines.Count == 0)
         {
             EndDialogue();
             return;
         }
- 
-        DialogueLine currentLine = lines.Dequeue();
+
+        var currentLine = _lines.Dequeue();
  
         characterIcon.sprite = currentLine.character.icon;
         characterName.text = currentLine.character.name;
@@ -78,23 +69,27 @@ public class DialogueManager : MonoBehaviour
        
     }
 
-    public void accuse(String name, AudioSource audioSource)
+    private void accuse(string name, AudioSource audioSource)
     {
-        if (guiltCounter == 0)
+        if (_guiltCounter == 0)
         {
             if (name == "Teacher")
             {
                 Globals.SpilledWineCorrect = true;
             }
-            guiltCounter = 1;
-        } else if (guiltCounter == 1)
+
+            _guiltCounter = 1;
+        }
+        else if (_guiltCounter == 1)
         {
             if (name == "Student")
             {
                 Globals.VomitCorrect = true;
             }
-            guiltCounter = 2;
-        } else if (guiltCounter == 2)
+
+            _guiltCounter = 2;
+        }
+        else if (_guiltCounter == 2)
         {
             if (name == "Activist")
             {

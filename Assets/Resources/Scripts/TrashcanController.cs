@@ -1,13 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TrashcanController : MonoBehaviour
 {
     private Animator _animator;
-    private AudioSource audioSource;
+    private AudioSource _audioSource;
 
     public Dialogue greetingDialogue;
     public Dialogue hasGlueDialogue;
@@ -18,7 +16,7 @@ public class TrashcanController : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -31,7 +29,7 @@ public class TrashcanController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             _animator.SetBool("isTalking", true);
             TriggerDialogue();
@@ -40,7 +38,7 @@ public class TrashcanController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             _animator.SetBool("isTalking", false);
         }
@@ -52,7 +50,7 @@ public class TrashcanController : MonoBehaviour
             Globals.VomitStatus == TrashStatus.DISPOSED &&
             Globals.WineStatus == TrashStatus.DISPOSED)
         {
-            DialogueManager.Instance.StartDialogue(allCollectedDialogue, audioSource);
+            DialogueManager.Instance.StartDialogue(allCollectedDialogue, _audioSource);
             return;
         }
 
@@ -60,7 +58,7 @@ public class TrashcanController : MonoBehaviour
             Globals.VomitStatus != TrashStatus.COLLECTED && 
             Globals.WineStatus != TrashStatus.COLLECTED)
         {
-            DialogueManager.Instance.StartDialogue(greetingDialogue, audioSource);
+            DialogueManager.Instance.StartDialogue(greetingDialogue, _audioSource);
             return;
         }
 
@@ -91,6 +89,6 @@ public class TrashcanController : MonoBehaviour
         DialogueManager.Instance.StartDialogue(new Dialogue() { 
             dialogueLines = combinedDialogue
             .SelectMany(dialogue => dialogue.dialogueLines)
-            .ToList() }, audioSource);
+            .ToList() }, _audioSource);
     }
 }

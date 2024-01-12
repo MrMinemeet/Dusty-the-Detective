@@ -8,8 +8,8 @@ public class ActivateOnSceneSwitch : MonoBehaviour
     public GameObject dirtDist;
     void Update()
     {
-        dirtDist.SetActive(Globals.allowDirtPlacement);
-        dirtPointer.SetActive(Globals.allowDirtPlacement);
+        dirtDist.SetActive(Globals.AllowDirtPlacement);
+        dirtPointer.SetActive(Globals.AllowDirtPlacement);
     }
 
 }

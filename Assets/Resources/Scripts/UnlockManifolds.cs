@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
@@ -10,17 +9,17 @@ public class UnlockManifolds : MonoBehaviour
 {
    public List<Button> buttons;
    public List<Button> shuffledButtons;
-   private int counter = 0;
+   private int _counter;
 
    public Animator animator;
 
-   private static bool played = false;
+   private static bool _played;
 
    public void Update()
    {
-      if (Globals.LeftoverTrash == 1 && !played)
+      if (Globals.LeftoverTrash == 1 && !_played)
       {
-         played = true;
+         _played = true;
          animator.Play("show");
          RestartNumberMiniGame();
       }
@@ -29,6 +28,7 @@ public class UnlockManifolds : MonoBehaviour
    private void RestartNumberMiniGame()
    {
       Globals.IsMiniGameActive = true;
+      _counter = 0;
       shuffledButtons = buttons.OrderBy(a => Random.Range(0, 100)).ToList();
 
       for (int i = 1; i < 11; i++)
@@ -39,26 +39,26 @@ public class UnlockManifolds : MonoBehaviour
       }
    }
 
-   public void pressButton(Button button)
+   public void PressButton(Button button)
    {
-      if (int.Parse(button.GetComponentInChildren<TextMeshProUGUI>().text) - 1 == counter)
+      if (int.Parse(button.GetComponentInChildren<TextMeshProUGUI>().text) - 1 == _counter)
       {
-         counter++;
+         _counter++;
          button.interactable = false;
          button.image.color = Color.green;
-         if (counter == 10)
+         if (_counter == 10)
          {
-            StartCoroutine(presentResult(true));
+            StartCoroutine(PresentResult(true));
          }
       }
       else
       {
-         StartCoroutine(presentResult(false));
+         StartCoroutine(PresentResult(false));
       }
    }
 
    // ReSharper disable Unity.PerformanceAnalysis
-   public IEnumerator presentResult(bool win)
+   private IEnumerator PresentResult(bool win)
    {
       if (!win)
       {

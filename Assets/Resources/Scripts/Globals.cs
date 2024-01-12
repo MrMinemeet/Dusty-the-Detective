@@ -9,7 +9,8 @@ using Random = UnityEngine.Random;
 public static class Globals
 {
 	// Bool for activating dirtspot placement after first dialogue with maid finished
-	public static bool allowDirtPlacement = false;
+	public static bool AllowDirtPlacement = false;
+	
 	public static bool IsMiniGameActive = false;
 	
 	// Times in seconds for guests range of leaving
@@ -27,6 +28,7 @@ public static class Globals
 	public static bool VomitCorrect;
 	public static bool SpilledWineCorrect;
 	public static bool GlueCorrect;
+	
 	// Flags for animating the correct guilt dialogue
 	public static bool ShowGuiltDialogue;
 

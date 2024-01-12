@@ -27,17 +27,14 @@ public class FloorChanger : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		// Don't allow changing floors if game is paused
-		if (PauseMenu.IsGamePaused) return;
-		
-		if (other.CompareTag("Player"))
+		// Don't allow changing floors if game is paused or not a player
+		if (PauseMenu.IsGamePaused || !other.CompareTag("Player")) return;
+
+		if ((Globals.CurrentFloor == Globals.Floors.Count - 1 && goesUp) ||
+		    (Globals.CurrentFloor == 0 && !goesUp))
 		{
-			if ((Globals.CurrentFloor == Globals.Floors.Count - 1 && goesUp) ||
-			    (Globals.CurrentFloor == 0 && !goesUp))
-			{
-				LevelLoader ll = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
-				StartCoroutine(ll.LoadLevel(Globals.Floors[Globals.CurrentFloor]));
-			}
+			LevelLoader ll = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
+			StartCoroutine(ll.LoadLevel(Globals.Floors[Globals.CurrentFloor]));
 		}
 	}
 }
