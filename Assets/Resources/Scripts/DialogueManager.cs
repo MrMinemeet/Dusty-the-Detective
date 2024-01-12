@@ -144,6 +144,10 @@ public class DialogueManager : MonoBehaviour
         IsDialogueActive = false;
         if (Globals.ShowGuiltDialogue)
         {
+            // Disable HUD
+            GameObject.Find("HUD").SetActive(false);
+            
+            // Show game over screen
             animator.Play("outGuilt");
             GameOverScreen.Setup(Globals.VomitCorrect, Globals.SpilledWineCorrect, Globals.GlueCorrect);
         }
