@@ -23,8 +23,10 @@ public class PauseMenu : MonoBehaviour
             ResumeGame();
         }
         else
-        {
-            PauseGame();
+        { 
+            // Don't allow Pause screen when GameOverScreen is shown
+            if (!GameOverScreen.IsActive)
+                PauseGame();
         }
     }
     
