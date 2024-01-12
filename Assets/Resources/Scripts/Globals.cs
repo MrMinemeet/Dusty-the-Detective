@@ -10,8 +10,9 @@ public static class Globals
 {
 	// Bool for activating dirtspot placement after first dialogue with maid finished
 	public static bool AllowDirtPlacement = false;
-	
 	public static bool IsMiniGameActive = false;
+	// Bool for activating HowToPlayScreen
+	public static bool enableHowToPlay = false;
 	
 	// Times in seconds for guests range of leaving
 	public const int MIN_TIME_UNTIL_LEAVE = 15 * 60;
