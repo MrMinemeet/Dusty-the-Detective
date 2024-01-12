@@ -28,7 +28,7 @@ public class UnlockManifolds : MonoBehaviour
 
    private void RestartNumberMiniGame()
    {
-      counter = 0;
+      Globals.IsMiniGameActive = true;
       shuffledButtons = buttons.OrderBy(a => Random.Range(0, 100)).ToList();
 
       for (int i = 1; i < 11; i++)
@@ -74,6 +74,7 @@ public class UnlockManifolds : MonoBehaviour
       {
          yield return new WaitForSeconds(2f);
          animator.Play("hide");
+         Globals.IsMiniGameActive = false;
       }
    }
 }

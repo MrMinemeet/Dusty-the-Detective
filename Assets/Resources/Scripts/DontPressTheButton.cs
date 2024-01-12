@@ -65,6 +65,7 @@ public class DontPressTheButton : MonoBehaviour
 	private void Disable()
 	{
 		Debug.Log("Disabling DontPressTheButton minigame");
+		Globals.IsMiniGameActive = false;
 		animator.Play("hide");
 		_runTimer = false;
 		Destroy(this);
@@ -73,6 +74,7 @@ public class DontPressTheButton : MonoBehaviour
 	private void StartMinigame()
 	{
 		Debug.Log("Starting DontPressTheButton minigame");
+		Globals.IsMiniGameActive = true;
 		animator.Play("show");
 		_timeToWait = DEFAULT_TIME_TO_WAIT;
 		_hasBeenPlayed = true;

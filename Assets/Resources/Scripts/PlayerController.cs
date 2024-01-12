@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         }
         
         // Skip if dialogue is active
-        if (DialogueManager.IsDialogueActive)
+        if (DialogueManager.IsDialogueActive || PauseMenu.IsGamePaused || Globals.IsMiniGameActive)
         {
             _moveInput = Vector2.zero;
             _rb.velocity = Vector2.zero;
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
     
     private void OnDash(InputValue value)
     {
-        if (PauseMenu.IsGamePaused) return;
+        if (PauseMenu.IsGamePaused || Globals.IsMiniGameActive) return;
         if (DialogueManager.IsDialogueActive) return;
         if (_dashTimer > 0) return;
         
@@ -88,10 +88,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnMove(InputValue value)
     {
-        // Don't do anything if game is paused
+        // Don't do anything if game is paused or player is in a minigame
         if (PauseMenu.IsGamePaused) return;
 
-        if (DialogueManager.IsDialogueActive)
+        if (DialogueManager.IsDialogueActive || Globals.IsMiniGameActive)
         {
             // Stop animations
             _a.SetBool("IsWalking", false);
