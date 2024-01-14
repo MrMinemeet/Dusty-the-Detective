@@ -43,6 +43,17 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue, AudioSource audioSource)
     {
+        // register exit listener when starting guilt dialogue
+        if (Globals.ShowGuiltDialogue)
+        {
+            PlayerController pc = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+            pc.OnExitDialogueEvent.AddListener(() =>
+            {
+                IsDialogueActive = false;
+                animator.Play("outGuilt");
+            });
+        }
+        
         IsDialogueActive = true;
         animator.Play(Globals.ShowGuiltDialogue ? "inGuilt" : "in");
 

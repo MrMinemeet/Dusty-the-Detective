@@ -22,10 +22,9 @@ public class PauseMenu : MonoBehaviour
         {
             ResumeGame();
         }
-        else
-        { 
-            // Don't allow Pause screen when GameOverScreen is shown
-            if (!GameOverScreen.IsActive)
+        else if (!GameOverScreen.IsActive && // Don't allow Pause screen when GameOverScreen is shown
+                 !DialogueManager.IsDialogueActive)  // Or when in dialogue
+        {
                 PauseGame();
         }
     }
