@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float normalMoveSpeed = 3f;
     public readonly UnityEvent OnSkipDialogueEvent = new();
+    public readonly UnityEvent OnExitDialogueEvent = new();
     
     public bool savePosition;
     public string gameManagerName;
@@ -75,6 +76,12 @@ public class PlayerController : MonoBehaviour
         // Trigger skip event when in a dialogue
         if (DialogueManager.IsDialogueActive)
             OnSkipDialogueEvent.Invoke();
+    }
+    private void OnExitDialogue(InputValue value)
+    {
+        // Trigger exit event when in a dialogue
+        if (DialogueManager.IsDialogueActive)
+            OnExitDialogueEvent.Invoke();
     }
     
     private void OnDash(InputValue value)
