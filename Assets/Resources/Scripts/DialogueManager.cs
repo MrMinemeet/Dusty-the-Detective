@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueArea;
 
     private Queue<DialogueLine> _lines;
+    private AudioSource _audioSource;
     
     public static bool IsDialogueActive { get; private set; }
  
@@ -30,7 +30,15 @@ public class DialogueManager : MonoBehaviour
         if (Instance == null)
             Instance = this;
 
+        _audioSource = GetComponent<AudioSource>();
         _lines = new Queue<DialogueLine>();
+    }
+
+    private void Start()
+    {
+        // Register on OnSkipDialogueEvent
+        GameObject player = GameObject.FindWithTag("Player");
+        player.GetComponent<PlayerController>().OnSkipDialogueEvent.AddListener(() => DisplayNextDialogueLine(_audioSource));
     }
 
     public void StartDialogue(Dialogue dialogue, AudioSource audioSource)
@@ -70,11 +78,11 @@ public class DialogueManager : MonoBehaviour
        
     }
 
-    private void accuse(string name, AudioSource audioSource)
+    private void Accuse(string guestName, AudioSource audioSource)
     {
         if (_guiltCounter == 0)
         {
-            if (name == "Teacher")
+            if (guestName == "Teacher")
             {
                 Globals.SpilledWineCorrect = true;
             }
@@ -83,7 +91,7 @@ public class DialogueManager : MonoBehaviour
         }
         else if (_guiltCounter == 1)
         {
-            if (name == "Student")
+            if (guestName == "Student")
             {
                 Globals.VomitCorrect = true;
             }
@@ -92,7 +100,7 @@ public class DialogueManager : MonoBehaviour
         }
         else if (_guiltCounter == 2)
         {
-            if (name == "Activist")
+            if (guestName == "Activist")
             {
                 Globals.GlueCorrect = true;
             }
@@ -102,33 +110,33 @@ public class DialogueManager : MonoBehaviour
 
     public void accuseTeacher(AudioSource audioSource)
     {
-        accuse("Teacher", audioSource);
+        Accuse("Teacher", audioSource);
     }
     
     public void accuseChild(AudioSource audioSource)
     {
-        accuse("Child", audioSource);
+        Accuse("Child", audioSource);
     }
     
     public void accuseStudent(AudioSource audioSource)
     {
-        accuse("Student", audioSource);
+        Accuse("Student", audioSource);
     }
     
     public void accuseActivist(AudioSource audioSource)
     {
-        accuse("Activist", audioSource);
+        Accuse("Activist", audioSource);
     }
     
     public void accuseArtist(AudioSource audioSource)
     {
-        accuse("Artist", audioSource);
+        Accuse("Artist", audioSource);
     }
  
     IEnumerator TypeSentence(DialogueLine dialogueLine)
     {
         dialogueArea.text = "";
-        foreach (char letter in dialogueLine.line.ToCharArray())
+        foreach (char letter in dialogueLine.line)
         {
             dialogueArea.text += letter;
             yield return new WaitForSeconds(typingSpeed);
