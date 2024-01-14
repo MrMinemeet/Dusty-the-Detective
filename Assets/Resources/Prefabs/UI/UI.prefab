@@ -1049,7 +1049,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1568489971733857162}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: accuseArtist
+        m_MethodName: AccuseArtist
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 7574724789737500028}
@@ -2050,7 +2050,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1568489971733857162}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: accuseTeacher
+        m_MethodName: AccuseTeacher
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 3284978368081726898}
@@ -3731,7 +3731,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1568489971733857162}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: accuseChild
+        m_MethodName: AccuseChild
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1249147646383015329}
@@ -4327,7 +4327,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1568489971733857162}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: accuseActivist
+        m_MethodName: AccuseActivist
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8595489162316258551}
@@ -6371,7 +6371,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1568489971733857162}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: accuseStudent
+        m_MethodName: AccuseStudent
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8571584543115829446}

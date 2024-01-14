@@ -108,32 +108,32 @@ public class DialogueManager : MonoBehaviour
         DisplayNextDialogueLine(audioSource);
     }
 
-    public void accuseTeacher(AudioSource audioSource)
+    public void AccuseTeacher(AudioSource audioSource)
     {
         Accuse("Teacher", audioSource);
     }
     
-    public void accuseChild(AudioSource audioSource)
+    public void AccuseChild(AudioSource audioSource)
     {
         Accuse("Child", audioSource);
     }
     
-    public void accuseStudent(AudioSource audioSource)
+    public void AccuseStudent(AudioSource audioSource)
     {
         Accuse("Student", audioSource);
     }
     
-    public void accuseActivist(AudioSource audioSource)
+    public void AccuseActivist(AudioSource audioSource)
     {
         Accuse("Activist", audioSource);
     }
     
-    public void accuseArtist(AudioSource audioSource)
+    public void AccuseArtist(AudioSource audioSource)
     {
         Accuse("Artist", audioSource);
     }
  
-    IEnumerator TypeSentence(DialogueLine dialogueLine)
+   private IEnumerator TypeSentence(DialogueLine dialogueLine)
     {
         dialogueArea.text = "";
         foreach (char letter in dialogueLine.line)
@@ -142,8 +142,8 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
     }
- 
-    void EndDialogue()
+
+    private void EndDialogue()
     {
         IsDialogueActive = false;
         if (Globals.ShowGuiltDialogue)
