@@ -1594,7 +1594,7 @@ MonoBehaviour:
       Audio: {fileID: 8300000, guid: fa606160c6a30554097e36db377c6e52, type: 3}
     - character:
         name: Dusty
-        icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
+        icon: {fileID: 1210645915, guid: c1b61b113462a424582cd4923ed7cd41, type: 3}
       line: Ok, I understand. What kind of guests are it this time?
       Audio: {fileID: 8300000, guid: 3101ac3956e05234e8c65fe6d8d7435d, type: 3}
     - character:
@@ -1618,7 +1618,7 @@ MonoBehaviour:
       Audio: {fileID: 8300000, guid: 78d4d946e52c7df48841cada0625c7df, type: 3}
     - character:
         name: Dusty
-        icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
+        icon: {fileID: 1210645915, guid: c1b61b113462a424582cd4923ed7cd41, type: 3}
       line: If he is a math teacher, then we are no friends, i hate math.
       Audio: {fileID: 8300000, guid: 3101ac3956e05234e8c65fe6d8d7435d, type: 3}
     - character:
@@ -1629,7 +1629,7 @@ MonoBehaviour:
       Audio: {fileID: 8300000, guid: fa606160c6a30554097e36db377c6e52, type: 3}
     - character:
         name: Dusty
-        icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
+        icon: {fileID: 1210645915, guid: c1b61b113462a424582cd4923ed7cd41, type: 3}
       line: Thanks for the briefing, I will try my best to find out who is responsible
         for the dirt spots.
       Audio: {fileID: 8300000, guid: 3101ac3956e05234e8c65fe6d8d7435d, type: 3}
@@ -1641,7 +1641,7 @@ MonoBehaviour:
       Audio: {fileID: 8300000, guid: 92d03744e50d7e549bc8a324934d08a8, type: 3}
     - character:
         name: Dusty
-        icon: {fileID: 21300000, guid: 6ff9144adb055bd4597e293191633803, type: 3}
+        icon: {fileID: 1210645915, guid: c1b61b113462a424582cd4923ed7cd41, type: 3}
       line: I will try my best to finish the job.
       Audio: {fileID: 8300000, guid: 3101ac3956e05234e8c65fe6d8d7435d, type: 3}
     - character:
