@@ -24,7 +24,7 @@ public class Dialogue
 }
 public class DialogueTrigger : MonoBehaviour
 {
-    private bool enterDialogue = false;
+    private bool _enterDialogue;
     
     public Dialogue dialogue;
     public Dialogue secondlDialogue;
@@ -43,9 +43,9 @@ public class DialogueTrigger : MonoBehaviour
 
     public void Update()
     {
-        if (enterDialogue && Input.GetKeyDown(KeyCode.E))
+        if (_enterDialogue && Input.GetKeyDown(KeyCode.E))
         {
-            enterDialogue = false;
+            _enterDialogue = false;
             TriggerDialogue();
         }
     }
@@ -94,7 +94,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            enterDialogue = true;
+            _enterDialogue = true;
         }
     }
 
@@ -102,7 +102,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            enterDialogue = false;
+            _enterDialogue = false;
         }
     }
 }

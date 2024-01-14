@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     public float normalMoveSpeed = 3f;
+    public readonly UnityEvent OnSkipDialogueEvent = new();
     
     public bool savePosition;
     public string gameManagerName;
@@ -66,6 +68,13 @@ public class PlayerController : MonoBehaviour
         // Only move if the player had released the input at least once
         if (_released)
             _rb.velocity = _moveInput * _moveSpeed;
+    }
+
+    private void OnSkipDialogue(InputValue value)
+    {
+        // Trigger skip event when in a dialogue
+        if (DialogueManager.IsDialogueActive)
+            OnSkipDialogueEvent.Invoke();
     }
     
     private void OnDash(InputValue value)
