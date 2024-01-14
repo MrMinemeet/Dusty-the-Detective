@@ -14,12 +14,19 @@ public class UnlockManifolds : MonoBehaviour
    public Animator animator;
 
    private static bool _played;
+   private GameObject _hud;
+
+   private void Awake()
+   {
+      _hud = GameObject.Find("HUD");
+   }
 
    public void Update()
    {
       if (Globals.LeftoverTrash == 1 && !_played)
       {
          _played = true;
+         _hud.SetActive(false);
          animator.Play("show");
          RestartNumberMiniGame();
       }
@@ -74,6 +81,7 @@ public class UnlockManifolds : MonoBehaviour
       {
          yield return new WaitForSeconds(2f);
          animator.Play("hide");
+         _hud.SetActive(true);
          Globals.IsMiniGameActive = false;
       }
    }

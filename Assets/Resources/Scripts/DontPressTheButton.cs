@@ -12,11 +12,13 @@ public class DontPressTheButton : MonoBehaviour
 	private static float _timeShown;
 	private static float _timeToWait;
 
+	private GameObject _hud;
 	private Rigidbody2D _playerRigidbody2D;
 
 	private void Awake()
 	{
 		_playerRigidbody2D = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+		_hud = GameObject.Find("HUD");
 	}
 
 	private void Update()
@@ -66,6 +68,7 @@ public class DontPressTheButton : MonoBehaviour
 	{
 		Debug.Log("Disabling DontPressTheButton minigame");
 		Globals.IsMiniGameActive = false;
+		_hud.SetActive(true);
 		animator.Play("hide");
 		_runTimer = false;
 		Destroy(this);
@@ -75,6 +78,7 @@ public class DontPressTheButton : MonoBehaviour
 	{
 		Debug.Log("Starting DontPressTheButton minigame");
 		Globals.IsMiniGameActive = true;
+		_hud.SetActive(false);
 		animator.Play("show");
 		_timeToWait = DEFAULT_TIME_TO_WAIT;
 		_hasBeenPlayed = true;
