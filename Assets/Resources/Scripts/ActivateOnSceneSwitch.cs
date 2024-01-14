@@ -1,15 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ActivateOnSceneSwitch : MonoBehaviour
 {
-    public GameObject dirtPointer;
     public GameObject dirtDist;
-    void Update()
+    private GameObject _dirtSpotPointers;
+
+    private void Awake()
     {
-        dirtDist.SetActive(Globals.AllowDirtPlacement);
-        dirtPointer.SetActive(Globals.AllowDirtPlacement);
+        _dirtSpotPointers = GameObject.FindWithTag("Player").transform.Find("DirtPointers").gameObject;
     }
 
+    private void Update()
+    {
+        dirtDist.SetActive(Globals.AllowDirtPlacement);
+        _dirtSpotPointers.SetActive(Globals.AllowDirtPlacement);
+    }
 }

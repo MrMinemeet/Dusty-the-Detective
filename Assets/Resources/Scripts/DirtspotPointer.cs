@@ -1,143 +1,34 @@
 /*
- * Script by "Code Monkey" on YouTube with some modifications to fit the project.
- * Tutorial: https://youtu.be/dHzeHh-3bp4
+ * Script based on Indie Nuggets' video "Unity Nuggets: How to Add Target Indicator Arrow in 2D Game"
+ * Tutorial: https://youtu.be/U1SdjGUFSAI
  */
 
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class DirtspotPointer : MonoBehaviour
 {
-    private readonly List<Pointer> _pointerList = new();
-    private Camera _uiCamera;
-    
-    private const float BORDER_SIZE = 75f;
-    
-    private void Awake()
+	private const float HIDE_DISTANCE = 5;
+	public Vector3 target;
+
+    // Update is called once per frame
+    void Update()
     {
-        _uiCamera = GameObject.Find("uiCamera").GetComponent<Camera>();
+	    // Hide if too close
+	    if (Vector2.Distance(transform.position, target) < HIDE_DISTANCE)
+	    {
+		    SetChildrenActive(false);
+		    return;
+	    }
+	    
+	    SetChildrenActive(true);
+	    Vector3 direction = target - transform.position;
+	    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+	    transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
-    private void Start()
+    private void SetChildrenActive(bool value)
     {
-        // Don't continue if there are no dirt spots on the current floor
-        if (!Globals.TrashMap.ContainsKey(SceneManager.GetActiveScene().name))
-        {
-            // Disable script
-            this.enabled = false;
-            return;
-        }
-
-        // Create arrows for dirt spots of current floor
-        foreach(Trash t in Globals.TrashMap[SceneManager.GetActiveScene().name]){
-            Vector3 targetPos = t.Position;
-            GameObject pointer = Instantiate(Resources.Load<GameObject>("Prefabs/UI/Pointer"), transform);
-            pointer.name = "Pointer_" + targetPos;
-
-            // Add pointer to list
-            _pointerList.Add(new Pointer(targetPos, pointer));
-
-            // Remove pointer when dirt spot is cleaned
-            CleaningTask ct = GameObject.Find($"DirtSpot_{targetPos}").GetComponent<CleaningTask>();
-            ct.onCleaned.AddListener(() =>
-            {
-                // 
-                
-                // Remove pointer from list
-                _pointerList.Remove(_pointerList.Find(p => p.TargetPosition == targetPos));
-                // Destroy pointer game object
-                Destroy(pointer);
-            });
-        }
-    }
-
-    private void Update()
-    {
-        // Hide pointer when game is paused
-        if (PauseMenu.IsGamePaused)
-        {
-            foreach (Pointer p in _pointerList)
-            {
-                p.Image.enabled = false;
-            }
-            return;
-        }
-        
-        foreach (Pointer p in _pointerList)
-        {
-            p.UpdatePos(_uiCamera);
-        }
-    }
-    
-    private static float Vec3ToAngle(Vector3 vector)
-    {
-        // Normalize the vector
-        vector = vector.normalized;
-        
-        // Calculate the angle in radians using Atan2
-        float angleRad = Mathf.Atan2(vector.y, vector.x);
-
-        // Convert radians to degrees
-        float angleDeg = angleRad * Mathf.Rad2Deg;
-
-        // Ensure the angle is within [0, 360] range
-        if (angleDeg < 0)
-        {
-            angleDeg += 360f;
-        }
-
-        return angleDeg;
-    }
-    
-    private class Pointer
-    {
-        public Vector3 TargetPosition { get; }
-        private RectTransform RectTransform { get; }
-        public Image Image { get; }
-        
-        public Pointer(Vector3 targetPosition, GameObject gameObject)
-        {
-            TargetPosition = targetPosition;
-            RectTransform = gameObject.GetComponent<RectTransform>();
-            Image = gameObject.GetComponent<Image>();
-        }
-
-        public void UpdatePos(Camera uiCamera)
-        {
-            Vector3 fromPosition = Camera.main!.transform.position;
-            fromPosition.z = 0f;
-        
-            // Convert direction to angle
-            float angle = Vec3ToAngle((TargetPosition - fromPosition).normalized);
-            RectTransform.localEulerAngles = new Vector3(0, 0, angle);
-        
-            Vector3 targetPositionScreenPoint = Camera.main.WorldToScreenPoint(TargetPosition);
-            bool isOffScreen = targetPositionScreenPoint.x <= BORDER_SIZE || targetPositionScreenPoint.x >= Screen.width - BORDER_SIZE ||
-                               targetPositionScreenPoint.y <= BORDER_SIZE || targetPositionScreenPoint.y >= Screen.height - BORDER_SIZE;
-
-            if (isOffScreen)
-            {
-                // Set image to arrow
-                Image.enabled = true;
-            
-                Vector3 cappedTargetScreenPosition = targetPositionScreenPoint;
-                // Cap the position to the screen
-                cappedTargetScreenPosition.x =  Mathf.Clamp(cappedTargetScreenPosition.x, BORDER_SIZE, Screen.width - BORDER_SIZE);
-                cappedTargetScreenPosition.y =  Mathf.Clamp(cappedTargetScreenPosition.y, BORDER_SIZE, Screen.height - BORDER_SIZE);
-                
-                // FIXME: At the moment, the camera of the "game" part is used, not the UI camera. Which causes the pointer to always be in the bottom left corner.
-                Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(cappedTargetScreenPosition);
-                RectTransform.position = pointerWorldPosition;
-                RectTransform.localPosition = new Vector3(RectTransform.localPosition.x, RectTransform.localPosition.y, 0f);
-                //Debug.Log("Pointer position: " + RectTransform.localPosition);
-            }
-            else
-            {
-                // Set image to none
-                Image.enabled = false;
-            }
-        }
+	    foreach(Transform child in transform)
+		    child.gameObject.SetActive(value);
     }
 }
