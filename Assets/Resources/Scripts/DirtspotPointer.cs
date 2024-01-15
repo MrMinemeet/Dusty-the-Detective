@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class DirtspotPointer : MonoBehaviour
 {
-	private const float HIDE_DISTANCE = 5;
+	private const float HIDE_DISTANCE = 2.5f;
 	public Vector3 target;
 
     // Update is called once per frame
