@@ -11,6 +11,9 @@ public class CleaningTask : MonoBehaviour
 		if (other.CompareTag("Player"))
 		{
 			_canClean = true;
+			
+			// Invoke trigger to show Key Hint
+			Globals.OnShowKeyHint.Invoke();
 		}
 	}
 
@@ -19,6 +22,9 @@ public class CleaningTask : MonoBehaviour
 		if (other.CompareTag("Player"))
 		{
 			_canClean = false;
+			
+			// Invoke trigger to hide Key Hint
+			Globals.OnHideKeyHint.Invoke();
 		}
 	}
 
@@ -31,6 +37,8 @@ public class CleaningTask : MonoBehaviour
 
 		Debug.Log("Player cleaned spot '" + gameObject.name + "'");
 		onCleaned.Invoke();
+		// Invoke to hide "interact" key
+		Globals.OnHideKeyHint.Invoke();
 
         Trash trash = Globals.TrashMap[Globals.CurrentFloorName].Find(t => t.Position == this.transform.position);
         Debug.Log(trash.Image.name);
