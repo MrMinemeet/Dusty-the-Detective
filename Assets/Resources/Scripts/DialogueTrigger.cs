@@ -46,6 +46,8 @@ public class DialogueTrigger : MonoBehaviour
         if (_enterDialogue && Input.GetKeyDown(KeyCode.E))
         {
             _enterDialogue = false;
+            // Hide as interaction has been performed
+            Globals.OnHideKeyHint.Invoke();
             TriggerDialogue();
         }
     }
@@ -95,6 +97,9 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             _enterDialogue = true;
+            
+            // Invoke trigger to show Key Hint
+            Globals.OnShowKeyHint.Invoke();
         }
     }
 
@@ -103,6 +108,9 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             _enterDialogue = false;
+            
+            // Invoke trigger to hide Key Hint
+            Globals.OnHideKeyHint.Invoke();
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
@@ -35,6 +36,10 @@ public static class Globals
 
 	// Total time in seconds of the game running
 	public static double TotalTimeRunning;
+	
+	// Events for showing the "Key Hint"
+	public static UnityEvent OnShowKeyHint = new();
+	public static UnityEvent OnHideKeyHint = new();
 
 	/**
 	 * Provides the amount of trash left in total
