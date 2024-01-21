@@ -1,6 +1,20 @@
 # Dusty the Detective
 This repository holds the source code for the game "*Dusty the Detective*" for the course "*Game Development*" in WS2023/24 at the [Johannes Kepler University](https://www.jku.at/) in Linz.
 
+## Contributors and Responsibilities
+| Name                  | Matr.-Nr. | Responsibilities                                           | 
+| --------------------- | --------- | ---------------------------------------------------------- |
+| Filip Okic            | k12008700 | Dialog system, Animations, Main Menu, Story, Minigame, ... |
+| Alexander Voglsperger | k12005568 | Map, Sounds, Navigation of NPCs, Dirt Spot stuff ...       |
+| Adrian Vinojcic       | k11904250 | Dusty textures, Animations, Layer ordering, Sounds, ...    |
+
+## Controls
+<img src="https://github.com/MrMinemeet/Dusty-the-Detective/assets/64403586/5e931486-f214-46ce-8418-590e641478bb" alt="drawing" width="500"/>
+
+## Requirements to run the game
+* Assumed Screen Resolution: FullHD (1920x1080)
+* To play run the game run the `.exe`-file in the build folder
+
 ## Setting
 * Located in a Hotel
 * Multiple floors to go around
@@ -16,7 +30,7 @@ This repository holds the source code for the game "*Dusty the Detective*" for t
 * Confront guests and decide if they are guilty or not
 * Minigames to clean dirty places (Button smashing, CAPTCHA-like puzzle, …)
 * Cleaning spots will reveal new hints from e.g., cleaning staff
-* Different types of "boss" NPCs (dirty minded one, talking trash can, …) with samll arena fight
+* Different types of "boss" NPCs (dirty minded one, talking trash can, …) with small arena fight
 * Goal of the game is to find all guilty guests
 
 ## Looks and Feels
@@ -39,3 +53,4 @@ This repository holds the source code for the game "*Dusty the Detective*" for t
 * Pixel Style Keys from [Itch.io](https://dreammix.itch.io/keyboard-keys-for-ui) by Dream Mix
 * Emergency Button from [Pixilart](https://www.pixilart.com/draw/emergency-button-among-us-16b80ef2ed7fca4)
 * Pixel Font - Thaleah from [Unity Store](https://assetstore.unity.com/packages/2d/fonts/free-pixel-font-thaleah-140059) by Tiny Worlds
+* Trashcan - [Fandom](https://deltarune.fandom.com/wiki/Trashy)
