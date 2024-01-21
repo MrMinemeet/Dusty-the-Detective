@@ -32,7 +32,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Kids_room.unity
     guid: d4dfc9c3b34d2424a881f845e117a5a4
-  - enabled: 1
-    path: Assets/Scenes/HowToPlay.unity
-    guid: 07af7652617a29e4cb09a2e7285d6ab4
   m_configObjects: {}
